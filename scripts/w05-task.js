@@ -37,7 +37,7 @@ const reset = () => {
 }
 
 /* filterTemples Function */
-const filterTemples = (temples) => {
+const sortBy = (temples) => {
     reset();
     let filter = document.querySelector('#filtered').value;
     console.log (filter)
@@ -108,7 +108,7 @@ getTemples();
 
 /* Event Listener */
 filtered = document.querySelector('#filtered')
-filtered.addEventListener('change', () => {filterTemples(templeList)});
+filtered.addEventListener('change', () => {sortBy(templeList)});
 
 /* Stretch Sort By Name Alphabetically */
 function sortAlphabeticallyByName(items) {
