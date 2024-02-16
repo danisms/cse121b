@@ -17,10 +17,9 @@ function loadBar() {
         }else {
             clearInterval(loading);
             console.log('Interval(loading) = cleared');
-            close()
-            open('my_project/index.html')
-        }
-    }
+            open('my_project/index.html', '_self');
+        };
+    };
     let loading = setInterval(loader, 200);
 }
 setTimeout(() => { 
