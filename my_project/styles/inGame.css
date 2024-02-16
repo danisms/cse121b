@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&family=Inter:wght@200&family=Jolly+Lodger&family=Petit+Formal+Script&family=Shadows+Into+Light&display=swap');
+
+:root {
+    --heading-font: "Petit Formal Script", Georgia, 'Times New Roman', Times, serif;
+    --paragraph-font: Inter, Arial, Helvetica, sans-serif;
+    --background-color: #0096D6;
+    --text-color: #fff;
+    --btn-color: rgba(0, 26, 255, 1);
+    --btn-color-2: black;
+    --hover-btn-color: rgb(0, 0, 150);
+}
+
+#menu-icon {
+    display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+}
+
+h2 {
+    margin: 0;
+}
+
+p {
+    font-family: var(--paragraph-font);
+}
+
+#main {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+body {
+    /* background-color: #FFFFFF; */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+<div id="selectDifficultyMenu">
+    <h1 id="gameTitle">Choose Difficulty</h1>
+    <div id="buttons">
+        <button id="easy" value ='easy' class="difficultyBtn">EASY</button>
+        <button id="medium" value="medium" class="difficultyBtn">MEDIUM</button>
+        <button id="hard" value="hard" class="difficultyBtn">HARD</button>
+    </div>
+</div>
+*/
+#selectDifficultyMenu{
+    display: block;
+}
+
+#gameTitle {
+    font-size: 2.5em;
+    line-height: 60px;
+    text-align: center;
+    margin-top: 5%;
+    animation-name: animateTextIntro;
+    animation-duration: 2s;
+}
+.difficultyBtn {
+    display: block;
+    width: 35%;
+    height: 70px;
+    background-color: var(--btn-color);
+    border-radius: 100px;
+    margin: 50px auto;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.difficultyBtn:hover {
+    background-color: var(--hover-btn-color);
+    transform: scale(1.04);
+    transition: transform 0.3s;
+}
+
+/*PLAY GAME MENU */
+/* <div id="main">
+        <h2 id="enterName">Enter Your Name</h2>
+        <input id="name" placeholder="Player Name" class="playGameElement">
+        <button id="startGameBtn" class="playGameElement">START</button>
+    </div>
+ */
+
+ #playGameMenu {
+    display: none;
+ }
+
+ #enterName {
+    text-align: center;
+    margin-top: 180px;
+}
+.playGameElement {
+    display: block;
+    width: 50%;
+    height: 50px;
+    font-size: 1.2em;
+    margin: 0 auto;
+ }
+ #name {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+ }
+ #startGameBtn {
+    width: 15%;
+    border-radius: 100px;
+    background-color: var(--btn-color);
+    color: var(--text-color);
+    transition: transform 0.5s;
+ }
+ #backBtn {
+    width: 15%;
+    border-radius: 100px;
+    background-color: var(--btn-color);
+    color: var(--text-color);
+    margin-top: 50px;
+    transition: transform 0.5s;
+ }
+
+ #startGameBtn:hover {
+    background-color: var(--hover-btn-color);
+    transform: scale(1.01);
+ }
+ #backBtn:hover {
+    background-color: var(--hover-btn-color);
+    transform: scale(1.01);
+ }
+
+ /* In Game Interface */
+ #inGame {
+    display: none;
+ }
+
+/* 
+<header>
+    <div id="playerNameHolder" class="nameHolder">Null</div>
+    <div id="playerScoreHolder" class="scoreHolder">0</div>
+    <div id="pauseBtn">▷</div>
+    <div id="computerNameHolder" class="nameHolder">Computer</div>
+    <div id="computerScoreHolder" class="scoreHolder">0</div>
+<header>
+*/
+
+header {
+    width: 90%;
+    height: 80px;
+    /* background-color: red; */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 0.2fr 0.5fr 1fr 0.2fr;
+    text-align: center;
+    align-items: center;
+}
+.nameHolder {
+    height: 60%;
+    background-color: black;
+    border: #fff 2px solid;
+    font-size: 1.2em;
+    text-align: center;
+    padding-top: 10px;
+    justify-content: center;
+    border-top-left-radius: 40px;
+    /* border-bottom-right-radius: 50px; */
+}
+.scoreHolder {
+    height: 60%;
+    background-color: black;
+    border: #fff 2px solid;
+    font-size: 1.5em;
+    padding-top: 10px;
+    border-bottom-right-radius: 40px;
+}
+#pauseBtn {
+    width: 70px;
+    height: 70px;
+    background-color: var(--btn-color-2);
+    color: var(--text-color);
+    font-size: 2.5em;
+    text-align: center;
+    padding-left: 13px;
+    justify-self: center;
+    border-radius: 100%;
+    border: #fff 3px solid;
+    transition: transform 0.5s;
+}
+#pauseBtn:hover {
+    background-color: white;
+    color: black;
+    border: #000 3px solid;
+    transform: scale(1.05);
+    /* transition: transform 0.5s; */
+}
+#pauseBtn:active {
+    background-color: var(--btn-color-2);
+    color: var(--text-color);
+    border: #fff 3px solid;
+    transform: scale(1);
+}
+/* 
+<main>
+    <div id="gameBox">
+        <button class="boxBtn" onclick="getButton('a')"></button>
+    </div>
+</main
+*/
+main {
+    /* background-color: pink; */
+    height: 570px;
+}
+#gameBox {
+    width: 80%;
+    height: 100%;
+    background-color: var(--text-color);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+}
+.boxBtn {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: var(--text-color);
+    font-size: 5.5em;
+}
+.boxBtn:hover {
+    background-color: var(--hover-btn-color);
+}
+.boxBtn:active {
+    background-color: #333;
+}
+
+/* 
+PAUSE GAME MENU
+<div id="pauseGameMenuHolder">
+    <div id="pauseGameMenu">
+        <div id="screen"></div>
+        <div id="buttonHolder">
+            <button id="continueBtn">CONTINUE</button>
+            <button id="endBtn">END</button>
+        </div>
+    </div>
+</div>
+*/
+#pauseGameMenuHolder {
+    width: 95%;
+    height: 130%;
+    background-color: rgba(0, 0, 250, 0.2);
+    position: relative;
+    margin: 0 auto;
+    top: -120%;
+    display: none;
+    align-content: center;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+#pauseGameMenu {
+    width: 70%;
+    /* height: 450px; */
+    background-color: rgba(255, 255, 255, 0.329);
+    position: relative;
+    margin: 0 auto;
+    border-radius: 15px;
+    display: grid;
+    align-items: center;
+}
+#screen {
+    width: 90%;
+    height: 300px;
+    background-color: black;
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    padding: 15px;
+    display: none;
+}
+#buttonHolder{
+    width: 95%;
+    height: 100px;
+    /* background-color: red; */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+.pauseMenuButtons {
+    width: 80%;
+    height: 80px;
+    background-color: var(--btn-color);
+    font-size: 1.2em;
+    color: var(--text-color);
+    border-radius: 15px;
+    transition: transform 0.2s;
+}
+.pauseMenuButtons:hover {
+    background-color: var(--hover-btn-color);
+    transform: scale(1.01);
+}
+.pauseMenuButtons:active {
+    background-color: #333;
+}
+#continueBtn {
+    margin: 0 auto;
+    grid-column: 1/1;
+    grid-row: 1/1;
+}
+#continuePlaying{
+    margin: 0 auto;
+    grid-column: 1/1;
+    grid-row: 1/1;
+    z-index: 1;
+    display: none;
+}
+#endBtn {
+    margin: 0 auto;
+}
+
+.rewardText{
+    font-size: 1em;
+    margin-top: 1px;
+}
+#rewardParagraph {
+    font-size: 0.8em;
+    margin: 0px;
+    margin-top: 0px;
+}
+

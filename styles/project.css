@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&family=Inter:wght@200&family=Jolly+Lodger&family=Petit+Formal+Script&family=Shadows+Into+Light&display=swap');
+
+:root {
+    --heading-font: "Petit Formal Script", Georgia, 'Times New Roman', Times, serif;
+    --paragraph-font: Inter, Arial, Helvetica, sans-serif;
+    --background-color: #0096D6;
+    --text-color: #fff;
+}
+
+#menu-icon {
+    display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+}
+
+h2 {
+    margin: 0;
+}
+
+p {
+    font-family: var(--paragraph-font);
+}
+
+#main {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+body {
+    /* background-color: #FFFFFF; */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+#gameTitle {
+    font-size: 2.5em;
+    line-height: 60px;
+    text-align: center;
+    margin-top: 15%;
+    animation-name: animateTextIntro;
+    animation-duration: 2s;
+}
+
+#progress-bar-box {
+    width: 70%;
+    /* background-color: red; */
+    margin: 5% auto;
+    display: none;
+}
+#animatedImg {
+    position: relative;
+    left: 0%;
+}
+#progress-bar {
+    width: 90%;
+    background-color: white;
+    height: 50px;
+    border-radius: 100px;
+    margin: 0 auto;
+    position: relative;
+    top: -15px;
+    overflow: hidden;
+}
+#loader {
+    background-color: blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100%;
+    border-radius: 100px;
+    width: 0%;
+    font-size: 1.5em;
+    text-align: center;
+    line-height: 45px;
+    font-weight: bold;
+}
+
+@keyframes animateTextIntro {
+    0% {
+        font-size: 0em;
+        /* rotate: 90deg; */
+    }
+    100% {
+        font-size: 2.5em;
+        /* rotate: -360deg; */
+        /* transform: rotateY(-360deg) */
+    }
+}

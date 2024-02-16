@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" content="Daniel C. Opute">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/inGame.css" rel="stylesheet" type="text/css">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <div id="main">
+        <div id="selectDifficultyMenu">
+            <h1 id="gameTitle">Choose Difficulty</h1>
+            <div id="buttons">
+                <button id="easy" onclick="selectDifficulty('easy')" value ='easy' class="difficultyBtn">EASY</button>
+                <button id="medium" onclick="selectDifficulty('medium')" value="medium" class="difficultyBtn">MEDIUM</button>
+                <button id="hard" onclick="selectDifficulty('hard')" value="hard" class="difficultyBtn">HARD</button>
+                <button onclick="backToIndex()" class="difficultyBtn">BACK</button>
+            </div>
+        </div>
+        <div id="playGameMenu">
+            <h2 id="enterName">Enter Your Name</h2>
+            <input id="name" placeholder="Player Name" class="playGameElement">
+            <button id="startGameBtn" class="playGameElement" onclick="getPlayerName()">START</button>
+            <button id="backBtn" class="playGameElement" onclick="backToIndex()">BACK</button>
+        </div>
+        <div id="inGame">
+            <header>
+                <div id="playerNameHolder" class="nameHolder">Null</div>
+                <div id="playerScoreHolder" class="scoreHolder">0</div>
+                <button id="pauseBtn" onclick="pauseMenu()">▶</button>
+                <div id="computerNameHolder" class="nameHolder">COMPUTER</div>
+                <div id="computerScoreHolder" class="scoreHolder">0</div>
+            </header>
+            <main>
+                <div id="gameBox">
+                    <button id="a" class="boxBtn" onclick="getButton('a')" onmouseover="changeColor('a', 'blue', 'black', 'white')" onmouseleave="changeColor('a', 'blue', 'black', 'white')"></button>
+                    <button id="b" class="boxBtn" onclick="getButton('b')" onmouseover="changeColor('b', 'blue', 'black', 'white')" onmouseleave="changeColor('b', 'blue', 'black', 'white')"></button>
+                    <button id="c" class="boxBtn" onclick="getButton('c')" onmouseover="changeColor('c', 'blue', 'black', 'white')" onmouseleave="changeColor('c', 'blue', 'black', 'white')"></button>
+                    <button id="d" class="boxBtn" onclick="getButton('d')" onmouseover="changeColor('d', 'blue', 'black', 'white')" onmouseleave="changeColor('d', 'blue', 'black', 'white')"></button>
+                    <button id="e" class="boxBtn" onclick="getButton('e')" onmouseover="changeColor('e', 'blue', 'black', 'white')" onmouseleave="changeColor('e', 'blue', 'black', 'white')"></button>
+                    <button id="f" class="boxBtn" onclick="getButton('f')" onmouseover="changeColor('f', 'blue', 'black', 'white')" onmouseleave="changeColor('f', 'blue', 'black', 'white')"></button>
+                    <button id="g" class="boxBtn" onclick="getButton('g')" onmouseover="changeColor('g', 'blue', 'black', 'white')" onmouseleave="changeColor('g', 'blue', 'black', 'white')"></button>
+                    <button id="h" class="boxBtn" onclick="getButton('h')" onmouseover="changeColor('h', 'blue', 'black', 'white')" onmouseleave="changeColor('h', 'blue', 'black', 'white')"></button>
+                    <button id="i" class="boxBtn" onclick="getButton('i')" onmouseover="changeColor('i', 'blue', 'black', 'white')" onmouseleave="changeColor('i', 'blue', 'black', 'white')"></button>
+                </div>
+                <div id="pauseGameMenuHolder">
+                    <div id="pauseGameMenu">
+                        <div id="screen">My name is Daniel Opute, I am a student of BYU-Idaho, I love programming and can program for straight 8hours without leaving my seat</div>
+                        <div id="buttonHolder">
+                            <button id="continueBtn" onclick="continueFromPause()" class="pauseMenuButtons">CONTINUE</button>
+                            <button id="continuePlaying" onclick="continuePlaying()" class="pauseMenuButtons">CONTINUE</button>
+                            <button id="endBtn" onclick="endGame()" class="pauseMenuButtons">END</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!--form-->
+        <form id="form" class="gform pure-form pure-form-stacked" method="POST" data-email="danielcopute@gmail.com" action="https://script.google.com/macros/s/AKfycbxshFOI02RWVgVv902x0ZHzGLeesCyRG38HbG50wrmnCDOUvmFNnhlUUxmbdcq8U316Kg/exec">
+            <fieldset id="main-fieldset" style="display: none;">
+                <legend>
+                    <h2>PLAYER GAME DETAILS</h2>
+                </legend>
+                <label>Player Name<br />
+                    <input type="text" name="Player-Name" size="30" placeholder="Player Name" id="playerName"/>
+                </label><br />
+                <label>Difficulty<br />
+                    <input type="text" id="difficulty" name="Difficulty" size="30" placeholder="Difficulty"/>
+                </label><br />
+                <label>Player-Score<br />
+                    <input type="text" id="playerScore" name="Player-Score" size="30" placeholder="Score"/>
+                </label><br />
+                <label>Computer-Score<br />
+                    <input type="text" id="computerScore" name="Computer-Score" size="30" placeholder="Score"/>
+                </label><br />
+                <label>Total-Rounds<br />
+                    <input type="text" id="gameRounds" name="Total-Round-Played" size="30" placeholder="Rounds"/>
+                </label><br />
+                <!-- Submit Button-->
+                <button id="submitButton" type="submit" name="Submit-Date" value="Todays Date">Submit</button>
+            </fieldset>
+
+            <!-- Customize the Thankyou Message People See when they submit the form: This will be hidden-->
+            <div class="thankyou_message" id="message-display" style="display:none;"></div>
+        </form>
+        
+        <footer>
+
+        </footer>
+    </div>
+</body>
+<script src="scripts/playGame.js" defer></script>
+<script data-cfasync="false" type="text/javascript" src="form-submission-handler.js" defer></script>
+</html>

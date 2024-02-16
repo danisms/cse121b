@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&family=Inter:wght@200&family=Jolly+Lodger&family=Petit+Formal+Script&family=Shadows+Into+Light&display=swap');
+
+:root {
+    --heading-font: "Petit Formal Script", Georgia, 'Times New Roman', Times, serif;
+    --paragraph-font: Inter, Arial, Helvetica, sans-serif;
+    --background-color: #0096D6;
+    --text-color: #fff;
+    --btn-color: blue;
+    --hover-btn-color: rgb(0, 0, 150);
+}
+
+#menu-icon {
+    display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+}
+
+h2 {
+    margin: 0;
+}
+
+p {
+    font-family: var(--paragraph-font);
+}
+
+#main {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+body {
+    /* background-color: #FFFFFF; */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+/* GAME MENU */
+#gameTitle {
+    font-size: 2.5em;
+    line-height: 60px;
+    text-align: center;
+    margin-top: 5%;
+    animation-name: animateTextIntro;
+    animation-duration: 2s;
+}
+.menuBtn {
+    display: block;
+    width: 35%;
+    height: 70px;
+    background-color: var(--btn-color);
+    border-radius: 100px;
+    margin: 50px auto;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.menuBtn:hover {
+    background-color: var(--hover-btn-color);
+    transform: scale(1.04);
+    transition: transform 0.3s;
+}
+
+footer {
+    text-align: center;
+    margin-top: 100px;
+}
