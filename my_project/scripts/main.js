@@ -19,7 +19,6 @@ function playGameMenu() {
 
 function gameScores() {
     console.log(scoresBtn.value);
-    close();
-    open('scores.html')
+    open('scores.html', target='_self')
 };
 
