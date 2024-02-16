@@ -30,8 +30,7 @@ function getPlayerName() {
 };
 
 function backToIndex() {
-    close();
-    open('index.html');
+    open('index.html', target='_self');
 };
 
 // IN GAME
