@@ -29,8 +29,8 @@ function getPlayerName() {
     };
 };
 
-function backToIndex() {
-    open('index.html', target='_self');
+function backTo(url) {
+    open(url, target='_self');
 };
 
 // IN GAME
