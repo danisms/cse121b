@@ -89,3 +89,58 @@ body {
         /* transform: rotateY(-360deg) */
     }
 }
+
+/* MEDIA QUARRY - SMALL-TAB AND LARGE-PHONE SCREEN */
+@media screen and (max-width: 890px) {
+    body {
+        font-size: 18px;
+    }
+    
+    #gameTitle {
+        margin-top: 25%;
+    }
+    
+    #progress-bar-box {
+        width: 90%;
+    }
+    #animatedImg {
+        width: 150px;
+        height: 150px;
+    }
+    #progress-bar {
+        width: 95%;
+        height: 45px;
+    }
+    #loader {
+        line-height: 40px;
+    }
+}
+    
+/* MEDIA QUARRY - SMALL-PHONE SCREEN */
+@media screen and (max-width: 489px) {
+    body {
+        font-size: 14px;
+    }
+    
+    #gameTitle {
+        margin-top: 45%;
+    }
+    
+    #progress-bar-box {
+        width: 90%;
+    }
+    #animatedImg {
+        position: relative;
+        left: 0%;
+        width: 100px;
+        height: 100px;
+    }
+    #progress-bar {
+        width: 95%;
+        height: 25px;
+    }
+    #loader {
+        line-height: 25px;
+    }
+}
+    

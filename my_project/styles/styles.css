@@ -70,3 +70,34 @@ footer {
     text-align: center;
     margin-top: 100px;
 }
+
+/* MEDIA QUARRY - SMALL-TAB AND LARGE-PHONE SCREEN */
+@media screen and (max-width: 890px) {
+    body {
+        font-size: 18px;
+    }
+    
+    #gameTitle {
+        margin-top: 10%;
+    }
+
+    .menuBtn {
+        width: 50%;
+        margin: 35px auto;
+    }
+}
+    
+/* MEDIA QUARRY - SMALL-PHONE SCREEN */
+@media screen and (max-width: 489px) {
+    body {
+        font-size: 16px;
+    }
+
+    .menuBtn {
+        width: 60%;
+    }
+    
+    #gameTitle {
+        margin-top: 15%;
+    }
+}

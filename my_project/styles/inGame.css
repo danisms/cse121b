@@ -341,3 +341,132 @@ PAUSE GAME MENU
     margin-top: 0px;
 }
 
+/* MEDIA QUARRY - SMALL-TAB AND LARGE-PHONE SCREEN */
+@media screen and (max-width: 890px) {
+    body {
+        font-size: 18px;
+    }
+    
+    #gameTitle {
+        margin-top: 10%;
+    }
+
+    .difficultyBtn {
+        width: 50%;
+        margin: 35px auto;
+    }
+
+    .playGameElement {
+        font-size: 1.4em;
+     }
+     #name {
+       margin-bottom: 60px;
+     }
+     #startGameBtn {
+        width: 25%;
+     }
+     #backBtn {
+        width: 25%;
+     }
+
+     .boxBtn {
+        width: 100%;
+        height: 100%;
+        font-size: 6.5em;
+    }
+
+     #pauseGameMenuHolder {
+        width: 98%;
+        height: 125%;
+        /* display: grid; */
+    }
+    #pauseGameMenu {
+        width: 90%;
+    }
+    #screen {
+        width: 90%;
+        height: 300px;
+        font-size: 1.2em;
+        padding: 10px;
+        /* display: block; */
+    }
+}
+    
+/* MEDIA QUARRY - SMALL-PHONE SCREEN */
+@media screen and (max-width: 489px) {
+    body {
+        font-size: 16px;
+    }
+
+    .difficultyBtn {
+        width: 60%;
+    }
+    
+    #gameTitle {
+        margin-top: 15%;
+    }
+
+    .playGameElement {
+        font-size: 1.4em;
+     }
+     #name {
+       margin-bottom: 45px;
+     }
+     #startGameBtn {
+        width: 35%;
+     }
+     #backBtn {
+        width: 35%;
+     }
+
+     header {
+        margin: 0px auto;
+    }
+    .nameHolder {
+        height: 40%;
+        font-size: 0.8em;
+    }
+    .scoreHolder {
+        height: 45%;
+        font-size: 1.2em;
+        padding-top: 5px;
+    }
+    #pauseBtn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8em;
+        padding-left: 10px;
+    }
+
+    #gameBox {
+        width: 90%;
+        height: 95%;
+    }
+    .boxBtn {
+        width: 100%;
+        height: 100%;
+        font-size: 6.5em;
+    }
+
+    #pauseGameMenuHolder {
+        width: 98%;
+        height: 125%;
+        /* display: grid; */
+    }
+    #pauseGameMenu {
+        width: 85%;
+    }
+    #screen {
+        width: 90%;
+        height: 300px;
+        font-size: 1.2em;
+        padding: 10px;
+        /* display: block; */
+    }
+    #buttonHolder{
+        width: 95%;
+        height: 100px;
+    }
+    
+}
+
