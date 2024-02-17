@@ -19,13 +19,18 @@ function getPlayerName() {
     getName.value = '';
     // validate input
     console.log(`Name: ${playerName}`);  // for testing purpose
-    if (playerName.trim() != '') {
+    if (playerName.trim() == '') {
+        alert('Player Name Should not be empty');
+    }else if (playerName.trim().length < 3){
+        alert('Your Name should be more than three(3) Letters');
+    }else if (playerName.trim().length > 12) {
+        alert('Name should not be more than twelve(12) Letters');
+    }
+    else{
         // console.log(playerName);  // for debugging purpose
         document.getElementById('playGameMenu').style.display = 'none';
         document.getElementById('inGame').style.display = 'block';
         displayPlayerName();
-    }else{
-        alert('Player Name Should not be empty');
     };
 };
 

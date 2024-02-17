@@ -9,7 +9,10 @@ const exitBtn = document.querySelector('#exitBtn');
 // Event Listeners
 playGameBtn.addEventListener('click', playGameMenu);
 scoresBtn.addEventListener('click', gameScores);
-exitBtn.addEventListener('click', () => {close()})
+exitBtn.addEventListener('click', () => {
+    open('index.html', '_self');
+    close();
+});
 
 function playGameMenu() {
     console.log(playGameBtn.value);
