@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/styles.css" type="text/css" rel="stylesheet">
+    <title>About</title>
+</head>
+<body>
+    <div id="main">
+        <h1 id="gameTitle">ABOUT</h1>
+        <div id="about-holder">
+            <h3>Introduction</h3>
+            <p>
+                Interactive Tic Tac Toe is a single-player computer game.<br>
+                The computer is built to challenge players in competitive games,
+                aiming to improve concentration and logical reasoning skills.
+            </p>
+            <h3>How To Play</h3>
+            <p>
+                The player selects a difficulty level from the available options (Easy, Medium, Hard).
+                Each level of difficulty represents the level of reasoning that the machine employs while interacting with the player.
+                Hard, requiring a high level of concentration and reasoning to win.<br><br>
+                In the first round, the player makes the starting move, followed by the computer. If the game ends without a winner, the first move is alternated, with the computer making the first move and vice versa.
+                However, if there is a winner, the winner takes the first move in the second round.<br><br>
+                Every time the player wins, the computer delivers a joke as a form of reward.
+                Interestingly, for every loss by the player, the computer provides an inspirational quote as a form of motivation.
+            </p>
+            <h3>Note</h3>
+            <p>
+                To end the game, click the pause button at the top of the screen, located between the player and computer score trackers.<br><br>
+                In addition to the ending the game with the pause button, the game prompts players to either end or continue playing after each win or loss.
+            </p>
+            <h3>Designer/Developer</h3>
+            <p>This Game was designed and developed by Daniel C. Opute as a project for the CSE 121 JavaScript class at BYU-Idaho.
+                The project began on February 11, 2024, and ended on or before February 17, 2024.
+            </p>
+        </div>
+        <div id="aboutBtnGrid">
+            <button id="aboutBackBtn" class="aboutBtn">BACK</button>
+            <button id="readAboutBtn" class="aboutBtn" onclick="readByLetter(content, 'about-holder', 50)">READ</button>
+        </div>
+    </div>
+    <footer>
+        &copy;2024 | DANIEL C. OPUTE | CSE 121b
+    </footer>
+    <script>
+        document.querySelector('#aboutBackBtn').addEventListener('click', ()=> open('index.html', target='_self'));
+
+        const content = `<h3>Introduction</h3>
+            <p>
+                Interactive Tic Tac Toe is a single-player computer game.<br>
+                The computer is built to challenge players in competitive games,
+                aiming to improve concentration and logical reasoning skills.
+            </p>
+            <h3>How To Play</h3>
+            <p>
+                The player selects a difficulty level from the available options (Easy, Medium, Hard).
+                Each level of difficulty represents the level of reasoning that the machine employs while interacting with the player.
+                Hard, requiring a high level of concentration and reasoning to win.<br><br>
+                In the first round, the player makes the starting move, followed by the computer. If the game ends without a winner, the first move is alternated, with the computer making the first move and vice versa.
+                However, if there is a winner, the winner takes the first move in the second round.<br><br>
+                Every time the player wins, the computer delivers a joke as a form of reward.
+                Interestingly, for every loss by the player, the computer provides an inspirational quote as a form of motivation.
+            </p>
+            <h3>Note</h3>
+            <p>
+                To end the game, click the pause button at the top of the screen, located between the player and computer score trackers.<br><br>
+                In addition to the ending the game with the pause button, the game prompts players to either end or continue playing after each win or loss.
+            </p>
+            <h3>Designer/Developer</h3>
+            <p>This Game was designed and developed by Daniel C. Opute as a project for the CSE 121 JavaScript class at BYU-Idaho.
+                The project began on February 11<sup>th</sup>, 2024, and ended on or before February 17<sup>th</sup>, 2024.
+            </p>`
+        
+        function speak(text, voiceNum) {
+            // Create a SpeechSynthesisUtterance
+            const utterance = new SpeechSynthesisUtterance(text);
+
+            // Select a voice
+            const voices = speechSynthesis.getVoices();
+            utterance.voice = voices[voiceNum]; // Choose a specific voice
+
+            // Speak the text
+            speechSynthesis.speak(utterance);
+        };
+
+        const readBtn = document.getElementById('readAboutBtn')
+        readBtn.addEventListener('click', ()=> {
+            speak(content, 0);
+        });
+        
+        function readByLetter(text, idValue, speed) {
+            let textList = text.split('');
+            let indexNum = 0;
+            let displayTitle = '';
+            console.log(textList)
+            console.log(textList.length)
+            function writeText() {
+                let textValue = textList[indexNum];
+                displayTitle += textValue;
+                document.getElementById(idValue).innerHTML = displayTitle;
+                indexNum++;
+                if (indexNum >= textList.length) {
+                    clearInterval(writing)
+                }
+            }
+            writing = setInterval(writeText, speed)
+        };
+    </script>
+</body>
+</html>

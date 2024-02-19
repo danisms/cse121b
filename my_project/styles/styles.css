@@ -47,6 +47,7 @@ body {
     margin-top: 5%;
     animation-name: animateTextIntro;
     animation-duration: 2s;
+    text-shadow: 2px 2px 2px #000;
 }
 .menuBtn {
     display: block;
@@ -66,9 +67,74 @@ body {
     transition: transform 0.3s;
 }
 
+#about-holder {
+    width: 90%;
+    height: 400px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* border-radius: 15px; */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 10px;
+    padding-left: 20px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+#about-holder::-webkit-scrollbar {
+    width: 10px;
+    border: 2px solid rgba(113, 113, 255, 0.3);
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+#about-holder::-webkit-scrollbar-thumb {
+    background: rgb(142, 187, 255);
+    /* border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px; */
+    border-radius: 15px;
+}
+
+
+
+#about-holder h3 {
+    margin-bottom: 0px;
+}
+#about-holder p {
+    margin-top: 5px;
+}
+
+#aboutBtnGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 25px;
+}
+
+.aboutBtn {
+    width: 50%;
+    height: 50px;
+    font-size: 1.2em;
+    background-color: var(--btn-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    justify-self: center;
+    transition: transform, 0.3s;
+}
+.aboutBtn:hover {
+    background-color: var(--hover-btn-color);
+    transform: scale(1.04);
+    /* transition: transform 0.3s; */
+}
+
 footer {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 
 /* MEDIA QUARRY - SMALL-TAB AND LARGE-PHONE SCREEN */
