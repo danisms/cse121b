@@ -22,9 +22,9 @@ function getPlayerName() {
     if (playerName.trim() == '') {
         alert('Player Name Should not be empty');
     }else if (playerName.trim().length < 3){
-        alert('Your Name should be more than three(3) Letters');
-    }else if (playerName.trim().length > 12) {
-        alert('Name should not be more than twelve(12) Letters');
+        alert('Your Name should be more than three(3) characters');
+    }else if (playerName.trim().length > 25) {
+        alert('Name should not be more than twenty-five(25) characters');
     }
     else{
         // console.log(playerName);  // for debugging purpose
@@ -996,23 +996,35 @@ function restWinningButtons(arrayValue) {
 };
 
 // button color
-let btnColor = '';
+// let btnColor = '';
 
 // change button colors
-function changeColor(elementId, firstColor, secondColor, textColor){
-    // Change background color of element
+// function changeColor(elementId, firstColor, secondColor, textColor){
+//     // Change background color of element
+//     const element = document.getElementById(elementId);
+//     if ((btnColor === '' || btnColor === secondColor) && element.style.getPropertyValue('background-color') != textColor){
+//         btnColor = firstColor;
+//         element.style.backgroundColor = btnColor;
+//         element.style.color = textColor;
+//     }else if((btnColor === firstColor) && element.style.getPropertyValue('background-color') != textColor){
+//         btnColor = secondColor;
+//         element.style.backgroundColor = btnColor;
+//         element.style.color = textColor;
+//     }else{
+//         // pass;
+//     }
+// };
+
+// Change color on mouse over or mouse out
+function changeColor(elementId, backgroundColor, textColor){
+    // Change background and text color of element
     const element = document.getElementById(elementId);
-    if ((btnColor === '' || btnColor === secondColor) && element.style.getPropertyValue('background-color') != textColor){
-        btnColor = firstColor;
-        element.style.backgroundColor = btnColor;
-        element.style.color = textColor;
-    }else if((btnColor === firstColor) && element.style.getPropertyValue('background-color') != textColor){
-        btnColor = secondColor;
-        element.style.backgroundColor = btnColor;
+    if (element.style.backgroundColor != textColor){
+        element.style.backgroundColor = backgroundColor;
         element.style.color = textColor;
     }else{
-        // pass;
-    }
+        // pass
+    };
 };
 
 // disable all button in the array supplied to the function
