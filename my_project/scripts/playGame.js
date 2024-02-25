@@ -88,6 +88,7 @@ let totalRounds = 0;  // incremented at check for win when there is a winner or 
 
 // API URL
 const adviceUrl = 'https://api.adviceslip.com/advice';
+const insultUrl = 'https://evilinsult.com/generate_insult.php?'
 const inspiredQuoteUrl = 'https://api.quotable.io/quotes/random'
 const jokeUrl = 'https://official-joke-api.appspot.com/random_joke';
 
@@ -144,6 +145,8 @@ function calculateResult() {
         document.querySelector('#computerScoreHolder').innerHTML = ++computerScore;
         // use advice api
         requestApi(inspiredQuoteUrl, displayGameRewardAdvice);
+        // use insult api
+        // requestApi(insultUrl, displayGameRewardInsult);
     };
     // submit and update result
 
@@ -845,6 +848,45 @@ function computerPlay(object) {
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }
+
+                    // avoiding player two ways when player plays in;
+                    // player in b and g options[a, c]; player in b and i options[a, c];
+                    // player in d and c options[a, g]; player in d and i options[a, g];
+                    // player in f and a options[c, i]; player in f and g options[c, i];
+                    // player in h and a options[g, i]; player h and c options[g, i].
+                    // NOTE: Computer first options will be either e or the direct opposite of player first play.
+                    else if ((object.b === playerValue && object.g === playerValue) || (object.b === playerValue && object.i === playerValue)) {
+                        options = ['a', 'c'];
+                        selectedChoice = pickRandomValue(options);
+                        console.log(`Available Options = ${options}`)
+                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        getButton(selectedChoice);  // make choice from options available
+                        return true;
+                    }
+                    else if ((object.d === playerValue && object.c === playerValue) || (object.d === playerValue && object.i === playerValue)) {
+                        options = ['a', 'g'];
+                        selectedChoice = pickRandomValue(options);
+                        console.log(`Available Options = ${options}`)
+                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        getButton(selectedChoice);  // make choice from options available
+                        return true;
+                    }
+                    else if ((object.f === playerValue && object.a === playerValue) || (object.f === playerValue && object.g === playerValue)) {
+                        options = ['c', 'i'];
+                        selectedChoice = pickRandomValue(options);
+                        console.log(`Available Options = ${options}`)
+                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        getButton(selectedChoice);  // make choice from options available
+                        return true;
+                    }
+                    else if ((object.h === playerValue && object.a === playerValue) || (object.h === playerValue && object.c === playerValue)) {
+                        options = ['g', 'i'];
+                        selectedChoice = pickRandomValue(options);
+                        console.log(`Available Options = ${options}`)
+                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        getButton(selectedChoice);  // make choice from options available
+                        return true;
+                    }
                     // if no of the conditions above is true, make random choice
                     else{
                         // Make random choice
@@ -1139,6 +1181,14 @@ function displayGameRewardAdvice(data){
     console.log(`Content Retrieved: ${JSON.stringify(reward)}`);
     displayGameRewardMenu().innerHTML = `<h2 class='rewardText'>YOU LOSE!🫣</h2><h3 class='rewardText'>Take This👇</h3><p id='rewardParagraph'>${reward[0].content}</p><span style='text-align:left; margin: 20px;'>Author: ${reward[0].author}</span>`;
 };
+
+function displayGameRewardInsult(data){
+    // Get Reward with an api
+    console.log(`Received JSON: ${JSON.stringify(data)}`);
+    let reward = data;
+    console.log(`Content Retrieved: ${JSON.stringify(reward)}`);
+    // displayGameRewardMenu().innerHTML = `<h2 class='rewardText'>YOU LOSE!🫣</h2><h3 class='rewardText'>Take This👇</h3><p id='rewardParagraph'>${reward[0].content}</p><span style='text-align:left; margin: 20px;'>Author: ${reward[0].author}</span>`;
+}
 
 // function to continue game after a player wins or loses a game
 function continuePlaying(){
