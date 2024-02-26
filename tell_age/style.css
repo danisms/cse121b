@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&family=Inter:wght@200&family=Jolly+Lodger&family=Petit+Formal+Script&family=Shadows+Into+Light&display=swap');
+
+:root {
+    --heading-font: "Petit Formal Script", Georgia, 'Times New Roman', Times, serif;
+    --paragraph-font: Inter, Arial, Helvetica, sans-serif;
+    --background-color: #0096D6;
+    --text-color: #fff;
+    --btn-color: blue;
+    --hover-btn-color: rgb(0, 0, 150);
+}
+
+#menu-icon {
+    display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+}
+
+h2 {
+    margin: 0;
+}
+
+p {
+    font-family: var(--paragraph-font);
+}
+
+#main {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: rgb(248, 72, 104);
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 1px #292828;
+}
+.box {
+    background-color: rgb(50, 50, 50, 0.5);
+    width: 65%;
+    height: 70%;
+    display: flex;
+    padding: 0px 10px;
+    border-radius: 15px;
+    position: absolute;
+    left: 17.5%;
+    font-size: 14px;
+    color: #fff;
+    text-shadow: 1px 0.5px 2px rgba(10, 10, 10, 0.4);
+    display: none;
+}
+#main-display-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.3fr;
+    justify-items: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+/* 
+<main>
+    <div class = "box" id="main-display-box">
+        <div id="display">
+            <p>Thinking...</p>
+        </div>
+        <input id="get-input">
+        <button onclick="processTask()" value="NEXT" id="btn" class="button">NEXT</button>
+    </div>
+</main>
+*/
+
+#display{
+    width: 90%;
+    height: 100%;
+    border: 2px solid pink;
+    border-radius: 15px;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    display: grid;
+    grid-template-rows: 1fr 0.3fr;
+    justify-items: center;
+    font-size: 1.2em;
+}
+
+#display p{
+    width: 90%;
+    height: 90%;
+    /* background-color: red; */
+    text-align: left;
+    overflow-y: auto;
+}
+
+#display p::-webkit-scrollbar{
+    background-color: pink;
+    border-radius: 10px;
+}
+
+#get-input{
+    width: 60%;
+    height: 50%;
+    font-size: 1.4em;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: pink;
+    border-radius: 5px;
+    outline: none;
+}
+
+#btnHolder{
+    grid-row: 2/3;
+    grid-column: 1/2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: 20px;
+    justify-items: center;
+    /* background-color: red; */
+}
+
+.button{
+    width: 100px;
+    height: 50px;
+    background-color: rgb(252, 199, 208);
+    border-radius: 10px;
+    border-color: rgb(247, 185, 195);
+    font-size: medium;
+    font-weight: bold;
+    color: #444;
+    align-self: center;
+    justify-self: center;
+    transition: transform 0.2s;
+}
+.button:hover{
+    transform: scale(1.05);
+}
+
+#btn-yes{
+    grid-column: 1/2;
+    display: none;
+}
+#btn-no{
+    grid-column: 3/4;
+    display: none;
+}
+#btn-next{
+    grid-column: 2/3;
+    /* display: none; */
+}
+
+/* 
+<div id="second-display">
+    <p id="second-paragraph">
+        RESULT:
+    </p>
+</div>
+*/
+#second-display{
+    grid-row: 1/3;
+    grid-column: 1/2;
+    background-color: rgba(46, 34, 36, 0.9);
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    align-content: center;
+    align-self: center;
+    font-size: 1.5em;
+    animation: transform-scale 1s;
+    animation-iteration-count: 1;
+    display: none;
+}
+#second-display-value-holder {
+    display: none;
+}
+#second-display h2{
+    font-size: 2.2em;
+    margin-top: 150px;
+}
+#second-display p {
+    font-size: 1.2em;
+    margin: 20px;
+}
+
+#btnHolder2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    /* background-color: blue; */
+    margin-top: 50px;
+    /* background-color: red; */
+}
+#btn-yes2{
+    /* grid-column: 1/2; */
+    justify-self: right;
+    /* display: none; */
+}
+#btn-no2{
+    /* grid-column: 2/3; */
+    justify-self: left;
+    /* display: none; */
+}
+#btn-restart{
+    grid-column: 1/3;
+    display: none;
+}
+
+@keyframes transform-scale{
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
