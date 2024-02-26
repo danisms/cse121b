@@ -216,3 +216,20 @@ body {
     }
 }
 
+/* MEDIA QUARRY - SMALL-TAB AND LARGE-PHONE SCREEN */
+@media screen and (max-width: 890px) {
+    .box {
+        /* background-color: green; */
+        width: 90%;
+        left: 3%;
+    }
+}
+    
+/* MEDIA QUARRY - SMALL-PHONE SCREEN */
+@media screen and (max-width: 489px) {
+    .box {
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 90%;
+        left: 3%;
+    }
+}
