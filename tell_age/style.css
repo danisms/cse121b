@@ -40,12 +40,13 @@ body {
 .box {
     background-color: rgb(50, 50, 50, 0.5);
     width: 65%;
-    height: 70%;
+    height: 500px;
     display: flex;
     padding: 0px 10px;
     border-radius: 15px;
-    position: absolute;
-    left: 17.5%;
+    /* position: absolute; */
+    margin: 0 auto;
+    /* left: 17.5%; */
     font-size: 14px;
     color: #fff;
     text-shadow: 1px 0.5px 2px rgba(10, 10, 10, 0.4);
@@ -205,6 +206,14 @@ body {
 #btn-restart{
     grid-column: 1/3;
     display: none;
+}
+
+footer {
+    /* background-color: red; */
+    height: 100%;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 
 @keyframes transform-scale{

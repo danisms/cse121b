@@ -1,56 +1,3 @@
-/*
-let full_name = prompt(`Hello! What's Your Full Name?`)
-full_name.toUpperCase;
-let random_num1 = Math.random()*10
-random_num1 = Math.floor(random_num1)
-let random_num2 = Math.random()*10
-random_num2 = Math.ceil(random_num2)
-*/
-/*
-alert(`Hi ${full_name}, Welcome to Tell Your Age`)
-alert(`My name is Age Maths Trick, I was designed by Daniel Opute to tell you your age.`)
-alert(`Please follow the instructions and I will tell you your age.`)
-alert('Always reply yes when asked to confirm to proceed')
-prompt(`Are you ready?`)
-prompt('Visualize your age in your mind... Is it two digits? Reply Yes if I am correct')
-alert('Thank you! Now seperate the digits. E.g. if mine is 02, I will seprate to 0  &  2')
-prompt('Have you done so?')
-alert('The first digit, multiply by 5')
-prompt('Have you done so?')
-alert(`Add ${random_num1} to your answer`)
-prompt('Have you done so?')
-alert(`Subtract ${random_num2} from your answer`)
-prompt('Have you done so? ')
-alert(`Multiply your answer by 2`)
-prompt(`Have you do so?`)
-alert(`Add the second digit to answer, i.e. 2 from my sample age of 02`)
-prompt('Have you done so?')
-let total = prompt(`What's the total sofar`)
-let cal_ran_num = total - 2*(random_num1 - random_num2)
-alert(`Your age is ${cal_ran_num}`)
-document.getElementById('age').innerHTML = `Your age is ${cal_ran_num}`;
-*/
-
-/*
-<main>
-        <div class = "box" id="main-display-box">
-            <div id="display">
-                <p>
-                    Welcome To Tell My age!<br><br>
-                    Enter Your Name In the Box below and press next to begin.
-                </p>
-                <input id="get-input">
-            </div>
-            <!-- <input id="get-input"> -->
-            <div id="btnHolder">
-                <button onclick="processTask()" value="YES" id="btn-yes" class="button">YES</button>
-                <button onclick="processTask()" value="NEXT" id="btn-next" class="button">NEXT</button>
-                <button onclick="processTask()" value="NO" id="btn-no" class="button">NO</button>
-            </div>
-        </div>
-    </main>
-*/
-
 // get first display
 let display = document.querySelector('#display');
 let paragraph = document.querySelector('p');
@@ -136,7 +83,7 @@ function processTask(){
             fname_lname_list.forEach((name) =>{
                 user_name += `${name[0].toUpperCase()}${name.substring(1)} `;
             });
-            textByLetter(`Hi ${user_name}, Welcome to Tell Your Age My name is Age Maths Trick, I was designed by Daniel Opute to tell your age. Please follow the instructions and I will tell your age. Click Next to begin.`, paragraph, 50)
+            textByLetter(`Hi ${user_name}, please honestly follow the instructions and I will tell your age. Click Next to begin.`, paragraph, 50)
             ++que_count;
             console.log(`Question Count: ${que_count}`);
             break
@@ -235,15 +182,16 @@ function processTask(){
             // display restart button and hide yes and no buttons
             btnYes2.style.display = 'none';
             btnNo2.style.display = 'none';
-            btnRestart.style.display = 'block';
 
             if (user_option === 'yes'){
                 textByLetter(`Thank you.`, display2_paragraph, 50);
             }else{
                 textByLetter(`Thank you.`, display2_paragraph, 50);
             };
-            ++que_count;
-            console.log(`Question Count: ${que_count}`);
+            submitResult();
+            btnRestart.style.display = 'block';
+            // ++que_count;
+            // console.log(`Question Count: ${que_count}`);
             break
     };
 };
@@ -253,7 +201,7 @@ function textByLetter(text, refValue, speed) {
     let indexNum = 0;
     let displayText = '';
     // Disable all buttons
-    let allBtn = document.querySelectorAll('button')
+    const allBtn = document.querySelectorAll('button')
     allBtn.forEach((button)=>{
         button.disabled = true;
     });
@@ -281,16 +229,38 @@ function cal_result(total, random_1, random_2) {
     return result;
 };
 
-// function display_button1(){
-//     if (box1.style.display = 'flex'){
-//         box1.style.display = 'none';
-//         box2.style.display = 'flex';
-//         box2.innerHTML = `Hi ${full_name}, Welcome to Tell Your Age \n 
-//         My name is Age Maths Trick, I was designed by Daniel Opute to tell your age. \n
-//         Please follow the instructions and I wll tell you age. Click Next for Next Page.`
-//     }
-//     else{
-//         box1.style.display = 'flex';
-//     }
-//     display_button1();
-// }
+function submitResult(){
+    /*
+    <fieldset id="main-fieldset" style="display: none;">
+        <legend>
+            <h2>USER DETAIL</h2>
+        </legend>
+        <label>User Name<br />
+            <input type="text" name="Username "size="30" placeholder="Username" id="userName"/>
+        </label><br />
+        <label>Age<br />
+            <input type="text" id="userAge" name="Age-Result" size="3" placeholder="User Age"/>
+        </label><br />
+        <label>Verify Age<br />
+            <input type="text" id="verifyAge" name="Verify Age" size="5" placeholder="Yes/No"/>
+        </label><br />
+        <!-- Submit Button-->
+        <button id="submitButton" type="submit" name="Submit-Date" value="Todays Date">Submit</button>
+    </fieldset>
+    */
+
+   // log submitting values
+   console.log(`username: ${user_name}`);
+   console.log(`userAge: ${user_result}`);
+   console.log(`verifyAge: ${user_option}`);
+   
+   document.querySelector('#userName').value = user_name;
+   document.querySelector('#userAge').value = user_result;
+   document.querySelector('#verifyAge').value = user_option;
+
+   let formSubmitBtn = document.querySelector('#submitButton')
+   let current_date = new Date();
+   formSubmitBtn.value = current_date;
+
+   formSubmitBtn.click();
+};

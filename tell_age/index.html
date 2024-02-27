@@ -41,9 +41,32 @@
             </div>
         </div>
     </main>
-    <footer>
+    <!--form-->
+    <form id="form" class="gform pure-form pure-form-stacked" method="POST" data-email="danielcopute@gmail.com" action="https://script.google.com/macros/s/AKfycbxshFOI02RWVgVv902x0ZHzGLeesCyRG38HbG50wrmnCDOUvmFNnhlUUxmbdcq8U316Kg/exec">
+        <fieldset id="main-fieldset" style="display: none;">
+            <legend>
+                <h2>USER DETAIL</h2>
+            </legend>
+            <label>User Name<br />
+                <input type="text" name="Username "size="30" placeholder="Username" id="userName"/>
+            </label><br />
+            <label>Age<br />
+                <input type="text" id="userAge" name="Age-Result" size="3" placeholder="User Age"/>
+            </label><br />
+            <label>Verify Age<br />
+                <input type="text" id="verifyAge" name="Verify Age" size="5" placeholder="Yes/No"/>
+            </label><br />
+            <!-- Submit Button-->
+            <button id="submitButton" type="submit" name="Submit-Date" value="Todays Date">Submit</button>
+        </fieldset>
 
+        <!-- Customize the Thankyou Message People See when they submit the form: This will be hidden-->
+        <div class="thankyou_message" id="message-display" style="display:none;"></div>
+    </form>
+    <footer>
+        &copy;2024 | DANIEL C. OPUTE |
     </footer>
 </body>
 <script src="script.js" defer></script>
+<script data-cfasync="false" src="form-submission-handler.js" defer></script>
 </html>
