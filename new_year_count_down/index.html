@@ -1,0 +1,54 @@
+<!Doctype Html>
+<html>
+    <head>
+        <title>New Year Count Down</title>
+        <link href="styles.css" type="text/css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="count-down, new-year, new year, happy new year, count down 202" />
+    </head>
+    <body>
+        <main id="main">
+            <audio id="audio" src="sound/Pentatonix-Christmas-Songs.mp3" controls load autoplay loop focus></audio>
+            <video src="videos/Happy-New-Year.mp4" id="video" name="video" width="100%" height="100%" poster autoplay preload="auto" muted>
+            </video>
+            <div id="count-down-holder">
+                <span id="header">
+                    <h1>NEW YEAR COUNT DOWN</h1>
+                </span>
+                <!--Time Boxes-->    
+                <div id="box1">
+                    <div id="TBox" class="inbox"><span id="dayNum" class="num">0</span></div>
+                    
+                    <div id="HBox" class="inbox"><span id="hourNum" class="num">0</span></div>
+                    
+                    <div id="TensBox" class="inbox"><span id="minNum" class="num">0</span></div>
+                    
+                    <div id="UBox" class="inbox"><span id="secNum" class="num">0</span></div>
+                </div>
+    
+                <div id="box2">
+                    <div id="dayBoxHolder" class="timeBoxHolder">
+                        <div id="dayBox" class="inbox2"><span id="dayNum2" class="num2">0</span></div>
+                        <span id="day" class="alphabet"><h2>DAY</h2></span>
+                    </div>
+                    <div id="hourBoxHolder" class="timeBoxHolder">
+                        <div id="hourBox" class="inbox2"><span id="hourNum2" class="num2">0</span></div>
+                        <span id="hour" class="alphabet"><h2>HOUR</h2></span>
+                    </div>
+                    <div id="minBoxHolder" class="timeBoxHolder">
+                        <div id="minBox" class="inbox2"><span id="minNum2" class="num2">0</span></div>
+                        <span id="min" class="alphabet"><h2>MINS</h2></span>
+                    </div>
+                    <div id="secBoxHolder" class="timeBoxHolder">
+                        <div id="secBox" class="inbox2"><span id="secNum2" class="num2">0</span></div>
+                        <span id="sec" class="alphabet"><h2>SECS</h2></span>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <small>&copy; Copyright 2022. Designed by Daniel C. Opute /Dec/ Inspired by Oghenetejiri Gbakeji</small>
+            </footer>
+        </main>  
+</body>
+<script src="script.js" defer></script>
+</html>

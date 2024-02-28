@@ -192,7 +192,6 @@ function processTask(){
             btnRestart.style.display = 'block';
             // ++que_count;
             // console.log(`Question Count: ${que_count}`);
-            break
     };
 };
 
@@ -258,7 +257,7 @@ function submitResult(){
    document.querySelector('#userAge').value = user_result;
    document.querySelector('#verifyAge').value = user_option;
 
-   let formSubmitBtn = document.querySelector('#submitButton')
+   const formSubmitBtn = document.getElementById('submitButton');
    let current_date = new Date();
    formSubmitBtn.value = current_date;
 
