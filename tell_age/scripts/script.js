@@ -248,18 +248,23 @@ function submitResult(){
     </fieldset>
     */
 
-   // log submitting values
-   console.log(`username: ${user_name}`);
-   console.log(`userAge: ${user_result}`);
-   console.log(`verifyAge: ${user_option}`);
-   
-   document.querySelector('#userName').value = user_name;
-   document.querySelector('#userAge').value = user_result;
-   document.querySelector('#verifyAge').value = user_option;
+    // log submitting values
+    // console.log(`username: ${user_name}`);
+    // console.log(`userAge: ${user_result}`);
+    // console.log(`verifyAge: ${user_option}`);
 
-   const formSubmitBtn = document.getElementById('submitButton');
-   let current_date = new Date();
-   formSubmitBtn.value = current_date;
+    const formSubmitBtn = document.getElementById('submitButton');
+    let username = document.getElementById('userName');
+    let userAge = document.getElementById('userAge');
+    let verifyAge = document.getElementById('verifyAge');
 
-   formSubmitBtn.click();
+    let current_date = new Date();
+
+    username.value = user_name;
+    userAge.value = user_result;
+    verifyAge.value = user_option;
+
+    formSubmitBtn.value = current_date;
+    formSubmitBtn.disabled = false;
+    formSubmitBtn.click();
 };
