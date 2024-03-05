@@ -234,6 +234,8 @@ main {
     background-color: #000;
     color: var(--text-color);
     font-size: 5.5em;
+    /* animation-name: textAppear; */
+    /* animation-duration: 1s; */
 }
 .boxBtn:hover {
     background-color: var(--hover-btn-color);
@@ -340,6 +342,15 @@ PAUSE GAME MENU
     margin: 0px;
     margin-top: 0px;
 }
+
+@keyframes textAppear {
+    0%{
+        font-size: 0%;
+    }100%{
+        font-size: 100%;
+    }
+}
+
 
 /* MEDIA QUARRY - SMALL-TAB AND LARGE-PHONE SCREEN */
 @media screen and (max-width: 890px) {
