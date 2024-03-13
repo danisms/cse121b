@@ -1,0 +1,136 @@
+{
+    "jokes": [
+        {   
+            "start": "male",
+            "first": "Honey, you look bothered. What troubles you?",
+            "second": "Nothing really, I was just thing of what marriage means to you.",
+            "third": "Oh, really? Well I think marriage is a relationship in which one person is always right, and the other is a husband.",
+            "fourth": "What?!..."
+        },
+        {
+            "start": "male",
+            "first": "Honey, will you marry after I die?",
+            "second": "No, I will live with my sister.\nWill you marry after I die?",
+            "third": "No, I will also live with your sister.",
+            "fourth": "What!?..."
+        },
+        {
+            "start": "male",
+            "first": "Knock Knock",
+            "second": "Who's there?",
+            "third": "The love of your life!",
+            "fourth": "Lier, you know chocolate can't speak."
+        },
+        {
+            "start": "female",
+            "first": "Honey, on my way back from work, I saw two women talking about their husband.",
+            "second": "What did they say?",
+            "third": "The first woman says, \"My husband is an angel.\" The second woman says, \"You’re lucky! Mine’s still alive.\"",
+            "fourth": "Wait... What do you mean..?"
+        },
+        {
+            "start": "male",
+            "first": "Honey, why were you quarrelling with your best friend on the phone yesterday.",
+            "second": "She told me that her husband cooks for her every evening because she is a goddess.",
+            "third": "So, what was the quarrel about.",
+            "fourth": "Nothing big, I only said, \"I wonder the burnt offerings he must be placing before her every evening.\""
+        },
+        {
+            "start": "male",
+            "first": "Honey, you look troubled, what bothers you?",
+            "second": "Please can you tell me how the word WIFE was coined",
+            "third": "That's simple, they took the first two and the last two letters of WIDE-LIFE",
+            "fourth": "Really..!"
+        },
+        {
+            "start": "male",
+            "first": "Honey, My birthday is coming up, what do you have for me?",
+            "second": "What should you give a man who has everything?",
+            "third": "A wife. She will tell him how everything works.",
+            "fourth": "...?"
+        },
+        {
+            "start": "male",
+            "first": "Honey, you look sad, what can I do for you?",
+            "second": "Please tell me a joke.",
+            "third": "Ok. My girlfriend accused me of cheating. I told her she was starting to sound like my wife.",
+            "fourth": "What!? Are you cheating?..."
+        },
+        {
+            "start": "male",
+            "first": "Darling, do you know you are 'ABCDEFGHIJK\nAdorable (A), beautiful (B), cute (C), delightful (D), elegant (E), fashionable (F), gorgeous (G), and hot (H).'?",
+            "second": "Aw, thanks you! But what about IJK?",
+            "third": "I'm Just Kidding!",
+            "fourth": "...?"
+        },
+        {
+            "start": "female",
+            "first": "Darling, at the hospital today, the doctor said he asked you a question, but he didn't understand your answer.",
+            "second": "Yes, that's true, he asked if I sometimes engage in dangerous sport and I said yes.",
+            "third": "Really! What sport is that?",
+            "fourth": "I told him, \"Sometimes I talk back at my wife.\""
+        },
+        {
+            "start": "female",
+            "first": "Honey, I observed that you've stop opening our car door for me, what happened?",
+            "second": "Nothing really.",
+            "third": "Then why did you stop?",
+            "fourth": "If a man opens the car door for his wife, you can be sure of one thing: either the car or the wife is new."
+        },
+        {
+            "start": "female",
+            "first": "Sweet-Heart, the start of this party was awesome, but right now I'm getting bored.",
+            "second": "Yes, that's true. It's late, can we leave for home now?",
+            "third": "No.., not yet. Please, tell me some jokes, maybe that will help my mode.",
+            "fourth": "Sure, here is one. At every party, there are two kinds of people: Those who want to go home and those who don’t. The trouble is, they are usually married to each other."
+        },
+        {
+            "start": "female",
+            "first": "Honey, I don't want to watch football, please can you change the channel?",
+            "second": "Sure.",
+            "third": "I have been looking for that remote. Why do husbands love remote controls?",
+            "fourth": "Hmm... Well, at home, that's the only thing they can control!"
+        },
+        {
+            "start": "female",
+            "first": "Honey, you look trouble, what's wrong?",
+            "second": "Nothing really, I'm just curious to know why we always compromise",
+            "third": "I don't understand, what do you mean?",
+            "fourth": "whenever we argue, I always end it by admit to be wrong and you agree."
+        },
+        {
+            "start": "female",
+            "first": "Honey, why are you bringing a magnifying glass to the kitchen?",
+            "second": "It's because, I want you to teach me how to cook.",
+            "third": "Is that what you need a magnifying glass for?",
+            "fourth": "Yes, I want to make sure your instructions are crystal clear."
+        },
+        {
+            "start": "female",
+            "first": "Honey, what do you have for me as birthday gift?",
+            "second": "Here it is. I bought you a GPS device.",
+            "third": "What! Why GPS device?",
+            "fourth": "Simple, I don't want you to say later in the future that, \"I don't know where this marriage is going.\""
+        },
+        {
+            "start": "female",
+            "first": "Honey, what do you have for me as birthday gift?",
+            "second": "Here it is. I bought you a map.",
+            "third": "A map?, why map?",
+            "fourth": "Because, I don't want to get lost in your eyes."
+        },
+        {   "start": "male",
+            "first": "Honey, why did you bring a fishing rod to our picnic?",
+            "second": "Do you have a problem with that?",
+            "third": "Yes, we were not visiting a river or lake.",
+            "fourth": "I know, I wanted to catch your attention."
+        },
+        {
+            "start": "female",
+            "first": "Darling, what will you give me for our 20th anniversary?",
+            "second": "A trip to Bangkok?",
+            "third": "Wow, that's awesome, and for our 30th anniversary?",
+            "fourth": "I'll pick you up again, babe!"
+        }
+    ]
+}
