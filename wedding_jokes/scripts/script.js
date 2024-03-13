@@ -35,8 +35,8 @@ const chatBox_3 = document.querySelector('#chat-3');
 const chatBox_4 = document.querySelector('#chat-4');
 
 // image paths
-const pathImg_1 = '../images/image_1.jpg';
-const pathImg_2 = '../images/image_2.png';
+const pathImg_1 = 'images/image_1.jpg';
+const pathImg_2 = 'images/image_2.png';
 // store current img displayed
 let currentImg = '';
 
