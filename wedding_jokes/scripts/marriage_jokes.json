@@ -89,7 +89,7 @@
             "first": "Honey, I don't want to watch football, please can you change the channel?",
             "second": "Sure.",
             "third": "I have been looking for that remote. Why do husbands love remote controls?",
-            "fourth": "Hmm... Well, at home, that's the only thing they can control!"
+            "fourth": "Hmm... Well at home, that's the only thing they can control!"
         },
         {
             "start": "female",
@@ -116,7 +116,7 @@
             "start": "female",
             "first": "Honey, what do you have for me as birthday gift?",
             "second": "Here it is. I bought you a map.",
-            "third": "A map?, why map?",
+            "third": "A map? Why map?",
             "fourth": "Because, I don't want to get lost in your eyes."
         },
         {   "start": "male",
