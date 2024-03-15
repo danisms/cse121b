@@ -8,6 +8,18 @@
 </div>
 */
 
+/* 
+<div id="conversation-intro">
+    <div id="couple-name-box"><h1>Conversation Between Mr & Mrs <span id="couple-name-intro">Couple's-Name</span></h1></div>
+    <div id="conversation-set">
+        <p id="set-paragraph">
+            Hello! what are you saying! are you listening to me or not, I believe you are.
+            Thanks for doing so.
+        </p>
+    </div>
+</div>
+*/
+
 // Import JSON FILE
 import values from "./marriage_jokes.json" assert {type: 'json'};
 // console.log(values)
@@ -15,7 +27,8 @@ import values from "./marriage_jokes.json" assert {type: 'json'};
 // CREATE GLOBAL VARIABLES
 const jokes = values.jokes;  // stores an object list of all jokes
 let pickedRandom = [];  // Hold all selected random number to avoid duplicates.
-let discussion = 1;  // stores the current discussion
+let discussion = 0;  // stores the current discussion
+let coupleName = prompt('Enter The Couple Name.');
 // Get HTML Elements
 const mainBtn = document.querySelector('button');
 // blocks
@@ -23,6 +36,13 @@ const mainBtn = document.querySelector('button');
 // const block_2 = document.querySelector('#block-2');
 // const block_3 = document.querySelector('#block-3');
 // const block_4 = document.querySelector('#block-4');
+
+//Conversation intro
+const conversationIntroBlock = document.querySelector('#conversation-intro');
+const coupleNameBox = document.querySelector('#couple-name-box');
+const coupleNameIntro = document.querySelector('#couple-name-intro');
+const conversationSetBlock = document.querySelector('#conversation-set');
+const setParagraph = document.querySelector('#set-paragraph');
 // image Elements
 const image_1 = document.querySelector('#image_1');
 const image_2 = document.querySelector('#image_2');
@@ -35,13 +55,17 @@ const chatBox_3 = document.querySelector('#chat-3');
 const chatBox_4 = document.querySelector('#chat-4');
 
 // image paths
-const pathImg_1 = 'images/image_1.jpg';
-const pathImg_2 = 'images/image_2.png';
+let pathImg_1 = '';
+let pathImg_2 = '';
+
+// image list
+let maleImg = ['images/image_1.jpg', 'images/image_11.jpg'];
+let femaleImg = ['images/image_2.jpeg', 'images/image_22.png'];
 // store current img displayed
 let currentImg = '';
 
 // all element array
-const allElements = [image_1, image_2, image_3, image_4, chatBox_1, chatBox_2, chatBox_3, chatBox_4];
+const allElements = [image_1, image_2, image_3, image_4, chatBox_1, chatBox_2, chatBox_3, chatBox_4, conversationIntroBlock, coupleNameBox, conversationSetBlock, setParagraph];
 
 
 // FUNCTIONS
@@ -71,38 +95,59 @@ function main() {
     function checkDiscussion() {
         // use switch to display chat accordingly
         switch(discussion){
+            case 0:
+                console.log('Introduction');
+                // select and image from image list
+                pathImg_1 = maleImg[getRandomNum(maleImg.length)];
+                pathImg_2 = femaleImg[getRandomNum(femaleImg.length)];
+                // display intro
+                conversationIntroBlock.style.display = 'block';
+                coupleNameBox.style.display = 'block';
+                coupleNameIntro.innerHTML = coupleName;
+                setTimeout(() => {
+                    conversationSetBlock.style.display = 'block';
+                    displayChat(setParagraph, selectedJoke.set, 1000, 60, 6000);
+                }, 2000);
+                ++discussion;
+                break
             case 1:
                 console.log('Discussion 1');
+                // clear conversation frame.
+                conversationIntroBlock.style.display = 'none';
                 // display picture
                 displayJoke(selectedJoke, image_1, 'display-left-photo');
-                displayChat(chatBox_1, selectedJoke.first, 900)
+                displayChat(chatBox_1, selectedJoke.first, 900, 60, 1000);
                 ++discussion;
                 break
             case 2:
                 console.log('Discussion 2');
                 // display picture
                 displayJoke(selectedJoke, image_2, 'display-right-photo');
-                displayChat(chatBox_2, selectedJoke.second, 900);
+                displayChat(chatBox_2, selectedJoke.second, 900, 60, 1000);
                 ++discussion;
                 break
             case 3:
                 console.log('Discussion 3');
                 // display picture
                 displayJoke(selectedJoke, image_3, 'display-left-photo');
-                displayChat(chatBox_3, selectedJoke.third, 900);
+                displayChat(chatBox_3, selectedJoke.third, 900, 60, 1000);
                 ++discussion;
                 break
             case 4:
                 console.log('Discussion 4');
                 // display picture
                 displayJoke(selectedJoke, image_4, 'display-right-photo');
-                displayChat(chatBox_4, selectedJoke.fourth, 900);
+                displayChat(chatBox_4, selectedJoke.fourth, 900, 60, 1000);
                 ++discussion;
                 // discussion = 1;
                 break
             default:
-                discussion = 1;
+                discussion = 0;
                 mainBtn.disabled = false;
+                // hide all elements
+                setTimeout(() => {
+                    hideElements(allElements);
+                }, 60000);
         };
     };
     
@@ -115,10 +160,10 @@ function main() {
         element.style.animationDuration = '1s';
     };
     
-    function displayChat(element, text, delayTime){
+    function displayChat(element, text, delayTime, speed, delayFunctionCall){
         setTimeout(() => {
             element.style.display = 'inline-block';
-            element.innerHTML = textByLetter(text, element, 50);
+            element.innerHTML = textByLetter(text, element, speed, delayFunctionCall);
         }, delayTime);
     };
 
@@ -151,7 +196,7 @@ function main() {
     };
 
     // Display text by latter
-    function textByLetter(text, refValue, speed) {
+    function textByLetter(text, refValue, speed, delayFunctionCall) {
         let textList = text.split('');
         let indexNum = 0;
         let displayText = '';
@@ -173,7 +218,7 @@ function main() {
                     // button.disabled = false;
                     setTimeout(() => {
                         checkDiscussion();
-                    }, 1000);
+                    }, delayFunctionCall);
                 });
             };
         };

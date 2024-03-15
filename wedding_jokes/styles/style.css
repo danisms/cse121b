@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Annapurna+SIL:wght@400;700&family=Great+Vibes&display=swap');
+
+h1, h2, h3 {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
     height: 100vh;
     margin: 0;
@@ -52,6 +61,47 @@ main {
     grid-template-rows: 1fr 1fr 1fr 1fr;
     row-gap: 2%;
 }
+
+/* 
+<div id="conversation-intro">
+    <div id="couple-name-box"><h1><span id="couple-name-intro">Conversation Between Mr & Mrs Couple's-Name</span></h1></div>
+    <div id="conversation-set">
+        <p id="set-paragraph">
+            Hello! what are you saying! are you listening to me or not, I believe you are.
+            Thanks for doing so.
+        </p>
+    </div>
+</div>
+*/
+#conversation-intro {
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 1px black;
+    font-size: 1.8em;
+    border-radius: 15px;
+    animation-name: display-intro-box;
+    animation-duration: 2s;
+    display: none;
+}
+#couple-name-box {
+    text-transform: capitalize;
+}
+#conversation-set {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 90%;
+    margin: 0 auto;
+    padding: 2px 15px;
+    border-radius: 10px;
+    display: none;
+}
+#set-paragraph {
+    font-family: "Annapurna SIL", serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
 /* Display Blocks */
 /* #block-1 {
     display: none;
@@ -177,5 +227,18 @@ footer {
         right: -100%;
     }100%{
         right: 0%;
+    }
+}
+
+@keyframes display-intro-box {
+    0%{
+        position: relative;
+        left: -100%;
+        /* transform: rotateY(0deg); */
+    }
+    100%{
+        position: relative;
+        left: 0%;
+        /* transform: rotateY(360deg); */
     }
 }

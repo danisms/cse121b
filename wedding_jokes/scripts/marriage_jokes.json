@@ -1,13 +1,15 @@
 {
     "jokes": [
         {   
+            "set": "After a minor quarrel, which was resolved. The husband entered the room and noticed his wife was lost in thoughts.",
             "start": "male",
             "first": "Honey, you look bothered. What troubles you?",
-            "second": "Nothing really, I was just thing of what marriage means to you.",
+            "second": "Nothing really, I was just thinking of what marriage means to you.",
             "third": "Oh, really? Well I think marriage is a relationship in which one person is always right, and the other is a husband.",
             "fourth": "What?!..."
         },
         {
+            "set": "Before going to sleep, the husband decided it would be a good idea to pose a question that bothered him.",
             "start": "male",
             "first": "Honey, will you marry after I die?",
             "second": "No, I will live with my sister.\nWill you marry after I die?",
@@ -15,13 +17,14 @@
             "fourth": "What!?..."
         },
         {
+            "set": "Ten(10) years after marriage.",
             "start": "male",
             "first": "Knock Knock",
             "second": "Who's there?",
             "third": "The love of your life!",
             "fourth": "Lier, you know chocolate can't speak."
         },
-        {
+        {   "set": "Evening Discussion.",
             "start": "female",
             "first": "Honey, on my way back from work, I saw two women talking about their husband.",
             "second": "What did they say?",
@@ -29,20 +32,23 @@
             "fourth": "Wait... What do you mean..?"
         },
         {
+            "set": "Following a heated telephone conversation between the wife and her best friend.",
             "start": "male",
-            "first": "Honey, why were you quarrelling with your best friend on the phone yesterday.",
+            "first": "Honey, why were you quarrelling with your best friend on the phone.",
             "second": "She told me that her husband cooks for her every evening because she is a goddess.",
             "third": "So, what was the quarrel about.",
-            "fourth": "Nothing big, I only said, \"I wonder the burnt offerings he must be placing before you every evening.\""
+            "fourth": "Nothing big, I only said, \"I wonder the burnt offerings he must be serving you every evening.\""
         },
         {
+            "set": "After a minor quarrel, which was resolved. The husband entered the room and noticed his wife was lost in thoughts.",
             "start": "male",
             "first": "Honey, you look troubled, what bothers you?",
             "second": "Nothing serious, I was just thinking of how the word WIFE was coined",
             "third": "That's simple, they took the first two and the last two letters of WIDE-LIFE",
-            "fourth": "Really..!"
+            "fourth": "Really..?"
         },
-        {
+        {   
+            "set": "A month before the wedding. How the husband proposed to his wife.",
             "start": "male",
             "first": "Honey, My birthday is coming up, what do you have for me?",
             "second": "What should you give a man who has everything?",
@@ -50,27 +56,31 @@
             "fourth": "...?"
         },
         {
+            "set": "Husband trying to impress his wife.",
             "start": "male",
             "first": "Honey, you look sad, what can I do for you?",
-            "second": "Please tell me a joke.",
+            "second": "Thank God, you noticed. Tell, me a joke.",
             "third": "Ok. My girlfriend accused me of cheating. I told her she was starting to sound like my wife.",
             "fourth": "What!? Are you cheating?..."
         },
         {
+            "set": "Husband definition of sarcasm.",
             "start": "male",
             "first": "Darling, do you know you are 'ABCDEFGHIJK\nAdorable (A), beautiful (B), cute (C), delightful (D), elegant (E), fashionable (F), gorgeous (G), and hot (H).'?",
             "second": "Aw, thank you! But what about IJK?",
             "third": "I'm Just Kidding!",
             "fourth": "...?"
         },
-        {
+        {   
+            "set": "After returning from a hospital checkup.",
             "start": "female",
-            "first": "Darling, at the hospital today, the doctor said he asked you a question, but he didn't understand your answer.",
+            "first": "Darling, at the hospital today, the doctor said he asked you a question, but he didn't understand your response.",
             "second": "Yes, that's true, he asked if I sometimes engage in dangerous sport and I said yes.",
             "third": "Really! What sport is that?",
             "fourth": "I told him, \"Sometimes I talk back at my wife.\""
         },
         {
+            "set": "A year after marriage.",
             "start": "female",
             "first": "Honey, I observed that you've stop opening our car door for me, what happened?",
             "second": "Nothing really.",
@@ -78,13 +88,15 @@
             "fourth": "If a man opens the car door for his wife, you can be sure of one thing: either the car or the wife is new."
         },
         {
+            "set": "Three(3) hours into a party.",
             "start": "female",
             "first": "Sweet-Heart, the start of this party was awesome, but right now I'm getting bored.",
             "second": "Yes, that's true. It's late, can we leave for home now?",
-            "third": "No.., not yet. Please, tell me some jokes, maybe that will help my mode.",
-            "fourth": "Sure, here is one. At every party, there are two kinds of people: Those who want to go home and those who don’t. The trouble is, they are usually married to each other."
+            "third": "No.., not yet. Please, do something to help my mode.",
+            "fourth": "Sure, I'll tell you a joke. You know, at every party, there are two kinds of people: Those who want to go home and those who don’t. The trouble is, they are usually married to each other."
         },
         {
+            "set": "The husband spent ten(10) minutes watching a football match. The wife, who had been looking for the remote, finally found it with her husband.",
             "start": "female",
             "first": "Honey, I don't want to watch football, please can you change the channel?",
             "second": "Sure.",
@@ -92,45 +104,52 @@
             "fourth": "Hmm... Well at home, that's the only thing they can control!"
         },
         {
+            "set": "After a minor quarrel, which was resolved. The wife entered the room and noticed her husband sad countenance.",
             "start": "female",
             "first": "Honey, you look trouble, what's wrong?",
             "second": "Nothing really, I'm just curious to know why we always compromise",
             "third": "I don't understand, what do you mean?",
-            "fourth": "whenever we argue, I always end it by admit to be wrong and you agree."
+            "fourth": "Whenever we argue, once I admit to be wrong, you agree, and that's the end."
         },
         {
+            "set": "The wife invites her husband to the kitchen for the first time for assistance.",
             "start": "female",
             "first": "Honey, why are you bringing a magnifying glass to the kitchen?",
-            "second": "It's because, I want you to teach me how to cook.",
+            "second": "It's because, I came to assist you.",
             "third": "Is that what you need a magnifying glass for?",
             "fourth": "Yes, I want to make sure your instructions are crystal clear."
         },
         {
+            "set": "A year after the wedding, they both decide to exchange gifts for their anniversary.",
             "start": "female",
-            "first": "Honey, what do you have for me as birthday gift?",
+            "first": "Honey, today is our anniversary, what do you have for me",
             "second": "Here it is. I bought you a GPS device.",
             "third": "What! Why GPS device?",
-            "fourth": "Simple, I don't want you to say later in the future that, \"I don't know where this marriage is going.\""
+            "fourth": "Simple, I don't want to hear you say, \"I don't know where this marriage is taking us to.\""
         },
         {
+            "set": "The wife's first birthday after marriage.",
             "start": "female",
             "first": "Honey, what do you have for me as birthday gift?",
             "second": "Here it is. I bought you a map.",
             "third": "A map? Why map?",
-            "fourth": "Because, I don't want to get lost in your eyes."
+            "fourth": "Because, I don't want to ever get lost in your eyes."
         },
-        {   "start": "male",
+        {   
+            "set": "Wife definition of sarcasm.",
+            "start": "male",
             "first": "Honey, why did you bring a fishing rod to our picnic?",
             "second": "Do you have a problem with that?",
             "third": "Yes, we were not visiting a river or lake.",
             "fourth": "I know, I wanted to catch your attention."
         },
-        {
+        {   
+            "set": "Husband returned late from work in the evening after leaving the house in a hurry and forgetting to drop money for food.",
             "start": "female",
-            "first": "Darling, what will you give me for our 20th anniversary?",
-            "second": "A trip to Bangkok?",
-            "third": "Wow, that's awesome, and for our 30th anniversary?",
-            "fourth": "I'll pick you up again, babe!"
+            "first": "Honey, Do you want dinner?",
+            "second": "Sure, what are my choices?",
+            "third": "Yes and No.",
+            "fourth": "Hmm... Give me both."
         }
     ]
 }
