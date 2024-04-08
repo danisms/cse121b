@@ -93,7 +93,6 @@
           var thankYouMessage = form.querySelector(".thankyou_message");
           if (thankYouMessage) {
             thankYouMessage.style.display = "none";  // hide thankyou_message;
-            open('inGame.html', target='_self');
           }
           return;
       };
