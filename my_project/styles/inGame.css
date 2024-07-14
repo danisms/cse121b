@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&family=Inter:wght@200&family=Jolly+Lodger&family=Petit+Formal+Script&family=Shadows+Into+Light&display=swap');
 
-:root {
-    --heading-font: "Petit Formal Script", Georgia, 'Times New Roman', Times, serif;
-    --paragraph-font: Inter, Arial, Helvetica, sans-serif;
-    --background-color: #0096D6;
-    --text-color: #fff;
-    --btn-color: rgba(0, 26, 255, 1);
-    --btn-color-2: black;
-    --hover-btn-color: rgb(0, 0, 150);
-}
-
 #menu-icon {
     display: none;
 }
@@ -54,22 +44,14 @@ body {
     display: block;
 }
 
-#gameTitle {
-    font-size: 2.5em;
-    line-height: 60px;
-    text-align: center;
-    margin-top: 5%;
-    animation-name: animateTextIntro;
-    animation-duration: 2s;
-}
 .difficultyBtn {
     display: block;
     width: 35%;
     height: 70px;
     background-color: var(--btn-color);
     border-radius: 100px;
-    margin: 50px auto;
-    font-size: 1.5em;
+    margin: 2rem auto;
+    font-size: 1.4em;
     font-weight: bold;
     color: var(--text-color);
 }
@@ -94,50 +76,55 @@ body {
 
  #enterName {
     text-align: center;
-    margin-top: 180px;
 }
 .playGameElement {
     display: block;
-    width: 50%;
+    width: fit-content;
     height: 50px;
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
     margin: 0 auto;
  }
  #name {
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 1rem;
     border-radius: 15px;
  }
  #startGameBtn {
-    width: 15%;
+    width: 20%;
+    padding: 0 1rem;
     border-radius: 100px;
     background-color: var(--btn-color);
     color: var(--text-color);
     transition: transform 0.5s;
  }
  #backBtn {
-    width: 15%;
+    width: 20%;
+    padding: 0 1rem;
     border-radius: 100px;
     background-color: var(--btn-color);
     color: var(--text-color);
-    margin-top: 50px;
+    margin-top: 1rem;
     transition: transform 0.5s;
- }
+}
 
- #startGameBtn:hover {
+#startGameBtn:hover {
     background-color: var(--hover-btn-color);
     transform: scale(1.01);
- }
- #backBtn:hover {
+}
+#backBtn:hover {
     background-color: var(--hover-btn-color);
     transform: scale(1.01);
- }
+}
 
- /* In Game Interface */
- #inGame {
+/* In Game Interface */
+#inGame {
     display: none;
- }
+    gap: 1rem;
+    align-content: center;
+    align-items: center;
+    overflow: hidden;
+}
 
 /* 
 <header>
@@ -151,57 +138,67 @@ body {
 
 header {
     width: 90%;
-    height: 80px;
+    height: fit-content;
+    padding: 1rem;
     /* background-color: red; */
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 0.2fr 0.5fr 1fr 0.2fr;
     text-align: center;
     align-items: center;
+    font-family: var(--paragraph-font);
 }
 .nameHolder {
     height: 60%;
-    background-color: black;
-    border: #fff 2px solid;
+    background-color: var(--btn-color-2);
+    /* border: #fff 1px solid; */
     font-size: 1.2em;
     text-align: center;
-    padding-top: 10px;
+    padding: .2rem;
     justify-content: center;
-    border-top-left-radius: 40px;
+    align-content: center;
+    border-top-left-radius: 20px;
     /* border-bottom-right-radius: 50px; */
 }
 .scoreHolder {
-    height: 60%;
-    background-color: black;
-    border: #fff 2px solid;
+    background-color: var(--btn-color-2);
+    /* border: #fff 1px solid; */
+    border: 1px solid var(--background-color-2);
+    padding: .3rem;
     font-size: 1.5em;
-    padding-top: 10px;
-    border-bottom-right-radius: 40px;
+    align-content: center;
+    border-bottom-right-radius: 20px;
 }
 #pauseBtn {
-    width: 70px;
-    height: 70px;
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem;
     background-color: var(--btn-color-2);
     color: var(--text-color);
-    font-size: 2.5em;
+    font-size: 1.5em;
+    font-weight: bolder;
     text-align: center;
-    padding-left: 13px;
+    /* padding-left: 13px; */
     justify-self: center;
+    align-content: center;
     border-radius: 100%;
-    border: #fff 3px solid;
+    /* border: #fff 1px solid; */
     transition: transform 0.5s;
 }
 #pauseBtn:hover {
-    background-color: white;
-    color: black;
-    border: #000 3px solid;
+    /* background-color: white; */
+    /* color: var(--background-color); */
+    /* border: #000 3px solid; */
     transform: scale(1.05);
     /* transition: transform 0.5s; */
 }
 #pauseBtn:active {
-    background-color: var(--btn-color-2);
+    /* background-color: var(--btn-color-2);
     color: var(--text-color);
-    border: #fff 3px solid;
+    border: #fff 3px solid; */
+    background-color: white;
+    color: var(--background-color);
+    /* border: #000 3px solid; */
     transform: scale(1);
 }
 /* 
@@ -213,13 +210,19 @@ header {
 */
 main {
     /* background-color: pink; */
-    height: 570px;
+    height: 79vh;
+    display: block;
+    box-sizing: border-box;
+    justify-content: center;
+    justify-items: center;
+    /* padding: .5rem; */
+    /* background-color: rebeccapurple; */
 }
 #gameBox {
-    width: 80%;
-    height: 100%;
-    background-color: var(--text-color);
+    width: 90%;
+    height: 96%;
     margin: 0 auto;
+    /* background-color: var(--background-color); */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -231,11 +234,22 @@ main {
 .boxBtn {
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: rgba(0, 0, 10, 0.5);
+    background-color: var(--background-color-2);
     color: var(--text-color);
     font-size: 5.5em;
+    border-radius: 15px;
     /* animation-name: textAppear; */
     /* animation-duration: 1s; */
+    box-shadow: 0 0 12px;
+}
+.boxBtn::after {
+    content: "";
+    /* background: linear-gradient(90deg, var(--background-color-3), var(--background-color)); */
+    inset: -0.5rem;
+    filter: blur(25px);
+    position: absolute;
+    z-index: -2;
 }
 .boxBtn:hover {
     background-color: var(--hover-btn-color);
@@ -257,22 +271,24 @@ PAUSE GAME MENU
 </div>
 */
 #pauseGameMenuHolder {
-    width: 95%;
-    height: 130%;
-    background-color: rgba(0, 0, 250, 0.2);
-    position: relative;
-    margin: 0 auto;
-    top: -120%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-color);
+    position: absolute;
+    /* margin: 0 auto; */
+    top: 0;
     display: none;
     align-content: center;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
+    align-items: center;
+    /* border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px; */
 }
 #pauseGameMenu {
     width: 70%;
-    /* height: 450px; */
-    background-color: rgba(255, 255, 255, 0.329);
-    position: relative;
+    height: 450px;
+    background-color: var(--background-color-2);
+    /* position: relative; */
+    align-self: center;
     margin: 0 auto;
     border-radius: 15px;
     display: grid;
@@ -281,10 +297,10 @@ PAUSE GAME MENU
 #screen {
     width: 90%;
     height: 300px;
-    background-color: black;
+    background-color: var(--background-color);
     border-radius: 15px;
     margin: 0 auto;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.2em;
@@ -309,6 +325,7 @@ PAUSE GAME MENU
     color: var(--text-color);
     border-radius: 15px;
     transition: transform 0.2s;
+    padding: 1rem;
 }
 .pauseMenuButtons:hover {
     background-color: var(--hover-btn-color);
@@ -355,7 +372,8 @@ PAUSE GAME MENU
 /* MEDIA QUARRY - SMALL-TAB AND LARGE-PHONE SCREEN */
 @media screen and (max-width: 890px) {
     body {
-        font-size: 18px;
+        font-size: 16px;
+        overflow: hidden;
     }
     
     #gameTitle {
@@ -370,15 +388,17 @@ PAUSE GAME MENU
     .playGameElement {
         font-size: 1.4em;
      }
+
      #name {
-       margin-bottom: 60px;
-     }
-     #startGameBtn {
-        width: 25%;
-     }
-     #backBtn {
-        width: 25%;
-     }
+        margin-bottom: 1rem;
+      }
+      #startGameBtn {
+         width: 35%;
+      }
+      #backBtn {
+         width: 35%;
+         margin: 1rem auto;
+      }
 
      .boxBtn {
         width: 100%;
@@ -386,11 +406,37 @@ PAUSE GAME MENU
         font-size: 6.5em;
     }
 
-     #pauseGameMenuHolder {
-        width: 98%;
-        height: 125%;
-        /* display: grid; */
+    /* 
+    <header>
+        <div id="playerNameHolder" class="nameHolder">Null</div>
+        <div id="playerScoreHolder" class="scoreHolder">0</div>
+        <div id="pauseBtn">▷</div>
+        <div id="computerNameHolder" class="nameHolder">Computer</div>
+        <div id="computerScoreHolder" class="scoreHolder">0</div>
+    <header>
+    */
+
+    header {
+        width: 90%;
+        grid-template-columns: 1fr 0.5fr 1fr;
     }
+    .nameHolder {
+        padding: .5rem;
+    }
+    .scoreHolder {
+        padding: .5rem;
+    }
+    #playerScoreHolder {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    #computerScoreHolder {
+        grid-column: 3/4;
+    }
+    #pauseBtn {
+        grid-row: 1/3;
+    }
+
     #pauseGameMenu {
         width: 90%;
     }
@@ -406,11 +452,12 @@ PAUSE GAME MENU
 /* MEDIA QUARRY - SMALL-PHONE SCREEN */
 @media screen and (max-width: 489px) {
     body {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .difficultyBtn {
         width: 60%;
+        margin: 1rem auto;
     }
     
     #gameTitle {
@@ -421,32 +468,32 @@ PAUSE GAME MENU
         font-size: 1.4em;
      }
      #name {
-       margin-bottom: 45px;
+       margin-bottom: 1rem;
      }
      #startGameBtn {
         width: 35%;
      }
      #backBtn {
         width: 35%;
+        margin: 1rem auto;
      }
 
-     header {
+    header {
         margin: 0px auto;
     }
     .nameHolder {
-        height: 40%;
-        font-size: 0.8em;
+        font-size: 1em;
+        height: fit-content;
+        padding: .5rem;
     }
     .scoreHolder {
-        height: 45%;
         font-size: 1.2em;
-        padding-top: 5px;
+        padding: 0;
     }
     #pauseBtn {
-        width: 50px;
-        height: 50px;
-        font-size: 1.8em;
-        padding-left: 10px;
+        width: fit-content;
+        height: fit-content;
+        padding: .8rem;
     }
 
     #gameBox {
@@ -459,13 +506,8 @@ PAUSE GAME MENU
         font-size: 6.5em;
     }
 
-    #pauseGameMenuHolder {
-        width: 98%;
-        height: 125%;
-        /* display: grid; */
-    }
     #pauseGameMenu {
-        width: 85%;
+        width: 90%;
     }
     #screen {
         width: 90%;
@@ -475,9 +517,11 @@ PAUSE GAME MENU
         /* display: block; */
     }
     #buttonHolder{
-        width: 95%;
+        width: 90%;
         height: 100px;
     }
-    
+    .pauseMenuButtons {
+        width: 100%;
+    }
 }
 

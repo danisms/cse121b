@@ -29,7 +29,7 @@ function getPlayerName() {
     else{
         // console.log(playerName);  // for debugging purpose
         document.getElementById('playGameMenu').style.display = 'none';
-        document.getElementById('inGame').style.display = 'block';
+        document.getElementById('inGame').style.display = 'grid';
         displayPlayerName();
     };
 };

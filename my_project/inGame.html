@@ -4,13 +4,15 @@
     <meta name="author" content="Daniel C. Opute">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/normalize.css" type="text/css">
+    <link rel="stylesheet" href="styles/styles.css" type="text/css">
     <link href="styles/inGame.css" rel="stylesheet" type="text/css">
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
     <div id="main">
         <div id="selectDifficultyMenu">
-            <h1 id="gameTitle">Choose Difficulty</h1>
+            <h1 id="gameTitle">Difficulty</h1>
             <div id="buttons">
                 <button id="easy" onclick="selectDifficulty('easy')" value ='easy' class="difficultyBtn">EASY</button>
                 <button id="medium" onclick="selectDifficulty('medium')" value="medium" class="difficultyBtn">MEDIUM</button>
@@ -28,21 +30,21 @@
             <header>
                 <div id="playerNameHolder" class="nameHolder">Null</div>
                 <div id="playerScoreHolder" class="scoreHolder">0</div>
-                <button id="pauseBtn" onclick="pauseMenu()">▶</button>
+                <button id="pauseBtn" onclick="pauseMenu()">| |</button>
                 <div id="computerNameHolder" class="nameHolder">COMPUTER</div>
                 <div id="computerScoreHolder" class="scoreHolder">0</div>
             </header>
             <main>
                 <div id="gameBox">
-                    <button id="a" class="boxBtn" onclick="getButton('a')" onmouseover="changeColor('a', 'blue', 'white')" onmouseout="changeColor('a', 'black', 'white')"></button>
-                    <button id="b" class="boxBtn" onclick="getButton('b')" onmouseover="changeColor('b', 'blue', 'white')" onmouseout="changeColor('b', 'black', 'white')"></button>
-                    <button id="c" class="boxBtn" onclick="getButton('c')" onmouseover="changeColor('c', 'blue', 'white')" onmouseout="changeColor('c', 'black', 'white')"></button>
-                    <button id="d" class="boxBtn" onclick="getButton('d')" onmouseover="changeColor('d', 'blue', 'white')" onmouseout="changeColor('d', 'black', 'white')"></button>
-                    <button id="e" class="boxBtn" onclick="getButton('e')" onmouseover="changeColor('e', 'blue', 'white')" onmouseout="changeColor('e', 'black', 'white')"></button>
-                    <button id="f" class="boxBtn" onclick="getButton('f')" onmouseover="changeColor('f', 'blue', 'white')" onmouseout="changeColor('f', 'black', 'white')"></button>
-                    <button id="g" class="boxBtn" onclick="getButton('g')" onmouseover="changeColor('g', 'blue', 'white')" onmouseout="changeColor('g', 'black', 'white')"></button>
-                    <button id="h" class="boxBtn" onclick="getButton('h')" onmouseover="changeColor('h', 'blue', 'white')" onmouseout="changeColor('h', 'black', 'white')"></button>
-                    <button id="i" class="boxBtn" onclick="getButton('i')" onmouseover="changeColor('i', 'blue', 'white')" onmouseout="changeColor('i', 'black', 'white')"></button>
+                    <button id="a" class="boxBtn" onclick="getButton('a')" onmouseover="changeColor('a', 'rgba(0, 0, 0, 0.5)', 'white')" onmouseout="changeColor('a', 'black', 'white')"></button>
+                    <button id="b" class="boxBtn" onclick="getButton('b')" onmouseover="changeColor('b', 'rgba(0, 0, 0, 0.5)', 'white')" onmouseout="changeColor('b', 'black', 'white')"></button>
+                    <button id="c" class="boxBtn" onclick="getButton('c')" onmouseover="changeColor('c', 'rgba(0, 0, 0, 0.5)', 'white')" onmouseout="changeColor('c', 'black', 'white')"></button>
+                    <button id="d" class="boxBtn" onclick="getButton('d')" onmouseover="changeColor('d', 'rgba(0, 0, 0, 0.5)', 'white')" onmouseout="changeColor('d', 'black', 'white')"></button>
+                    <button id="e" class="boxBtn" onclick="getButton('e')" onmouseover="changeColor('e', 'rgba(0, 0, 0, 0.5)', 'white')" onmouseout="changeColor('e', 'black', 'white')"></button>
+                    <button id="f" class="boxBtn" onclick="getButton('f')" onmouseover="changeColor('f', 'rgba(0, 0, 0, 0.5)', 'white')" onmouseout="changeColor('f', 'black', 'white')"></button>
+                    <button id="g" class="boxBtn" onclick="getButton('g')" onmouseover="changeColor('g', 'rgba(0, 0, 0, 0.5)', 'white')" onmouseout="changeColor('g', 'black', 'white')"></button>
+                    <button id="h" class="boxBtn" onclick="getButton('h')" onmouseover="changeColor('h', 'rgba(0, 0, 0, 0.5)', 'white')" onmouseout="changeColor('h', 'black', 'white')"></button>
+                    <button id="i" class="boxBtn" onclick="getButton('i')" onmouseover="changeColor('i', 'rgba(0, 0, 0, 0.5)', 'white')" onmouseout="changeColor('i', 'black', 'white')"></button>
                 </div>
                 <div id="pauseGameMenuHolder">
                     <div id="pauseGameMenu">

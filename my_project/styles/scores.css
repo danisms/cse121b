@@ -1,0 +1,18 @@
+table {
+    margin: 0 auto;
+    padding: 1rem;
+}
+thead {
+    background-color: red;
+    width: 100%;
+    font-size: 1.5em;
+    font-family: var(--heading-font);
+    height: 5rem;
+}
+
+thead tr th{
+    padding: 1rem;
+}
+tbody {
+    font-family: var(--paragraph-font);
+}

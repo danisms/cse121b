@@ -3,10 +3,22 @@
 :root {
     --heading-font: "Petit Formal Script", Georgia, 'Times New Roman', Times, serif;
     --paragraph-font: Inter, Arial, Helvetica, sans-serif;
-    --background-color: #0096D6;
+    --background-color: rgba(0, 0, 80, 0.8);
+    --background-color-2: rgba(0, 0, 15, 0.9);
+    --background-color-3: rgba(102, 51, 153, 0.8);
+    --background-color-4: yellow;
     --text-color: #fff;
-    --btn-color: blue;
-    --hover-btn-color: rgb(0, 0, 150);
+    --btn-color: rgba(0, 0, 90, 0.5);
+    --btn-color-2: rgba(0, 0, 0, 0.5);
+    --hover-btn-color: rgba(0, 0, 120, 0.5);
+    --loader-color: rgba(0, 0, 0, 0.5);
+}
+
+* {
+    /* box-sizing: border-box; */
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-color) var(--background-color);
+    scrollbar-width: none;
 }
 
 #menu-icon {
@@ -15,6 +27,11 @@
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
+}
+
+h1 {
+    margin-top: 0;
+    padding: 0;
 }
 
 h2 {
@@ -30,21 +47,54 @@ p {
     margin: 0 auto;
 }
 
+button {
+    border: none;
+    font-family: var(--paragraph-font);
+}
+
+input {
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    font-family: var(--paragraph-font);
+}
+
 body {
     /* background-color: #FFFFFF; */
-    background-color: var(--background-color);
+    /* background-color: var(--background-color); */
+    background: linear-gradient(90deg, var(--background-color-3), var(--background-color-4));
+    animation-name: change-background;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    /* animation-timing-function: linear; */
+    transition: background 10s linear;
     color: var(--text-color);
-    font-size: 22px;
+    font-size: 16px;
     margin: 0;
     padding: 0;
+    /* display: grid; */
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes change-background {
+    0% {
+        background: linear-gradient(0deg, var(--background-color-3), var(--background-color-4));
+    }
+    50% {
+        background: linear-gradient(90deg, var(--background-color-3), var(--background-color-4));
+    }
+    100% {
+        background: linear-gradient(270deg, var(--background-color-3), var(--background-color-4));
+    }
 }
 
 /* GAME MENU */
 #gameTitle {
-    font-size: 2.5em;
-    line-height: 60px;
+    font-size: 2em;
+    /* line-height: 60px; */
     text-align: center;
-    margin-top: 5%;
     animation-name: animateTextIntro;
     animation-duration: 2s;
     text-shadow: 2px 2px 2px #000;
@@ -55,7 +105,7 @@ body {
     height: 70px;
     background-color: var(--btn-color);
     border-radius: 100px;
-    margin: 50px auto;
+    margin: 2rem auto;
     font-size: 1.5em;
     font-weight: bold;
     color: var(--text-color);
@@ -67,46 +117,31 @@ body {
     transition: transform 0.3s;
 }
 
-#about-holder {
-    width: 90%;
-    height: 400px;
-    margin: 0 auto;
+
+/* ABOUT */
+.about {
     background-color: rgba(0, 0, 0, 0.5);
-    /* border-radius: 15px; */
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    padding: 10px;
-    padding-left: 20px;
+    padding: 1rem 0;
+    box-sizing: border-box;
+}
+#about-holder {
+    width: 100%;
+    height: 70vh;
+    margin: 0 auto;
+    /* background-color: rgba(0, 0, 0, 0.5); */
     overflow-y: auto;
     scroll-behavior: smooth;
+    scrollbar-width: none;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    padding: 0 2rem;
 }
-
-#about-holder::-webkit-scrollbar {
-    width: 10px;
-    border: 2px solid rgba(113, 113, 255, 0.3);
-    border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: relative;
-}
-
-#about-holder::-webkit-scrollbar-thumb {
-    background: rgb(142, 187, 255);
-    /* border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px; */
-    border-radius: 15px;
-}
-
-
 
 #about-holder h3 {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 #about-holder p {
-    margin-top: 5px;
+    box-sizing: border-box;
 }
 
 #aboutBtnGrid {
@@ -133,14 +168,13 @@ body {
 
 footer {
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 10px;
+    padding: 1rem;
 }
 
 /* MEDIA QUARRY - SMALL-TAB AND LARGE-PHONE SCREEN */
 @media screen and (max-width: 890px) {
     body {
-        font-size: 18px;
+        font-size: 14px;
     }
     
     #gameTitle {
@@ -156,14 +190,19 @@ footer {
 /* MEDIA QUARRY - SMALL-PHONE SCREEN */
 @media screen and (max-width: 489px) {
     body {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .menuBtn {
         width: 60%;
+        margin: 1rem auto;
     }
     
     #gameTitle {
-        margin-top: 15%;
+        margin-top: 1rem;
+    }
+
+    #about-holder {
+        padding: 1rem;
     }
 }
