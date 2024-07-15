@@ -1354,13 +1354,16 @@ function submitResults(){
         }
     ]
     
-    // submit data to script
-    // sendUploadDataRequest(dataObjects, processScoreData);
+   // submit data to script
+    if (totalRounds > 0) {
+        // sendUploadDataRequest(dataObjects, processScoreData);
 
-    // SUBMIT TO LMAIE
-    formSubmitBtn.value = current_date;
-
-    formSubmitBtn.click();
+        // SUBMIT TO LMAIE
+        formSubmitBtn.value = current_date;
+        formSubmitBtn.click();
+    }else {
+        backTo('inGame.html');
+    }
 };
 
 

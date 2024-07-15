@@ -1,4 +1,4 @@
-const processScoreData = 'process-score-data.php';
+const processScoreData = 'scripts/process-score-data.php';
 
 // SPECIFIC FUNCTION
 // make request to server script and retrieve data from database
