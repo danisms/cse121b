@@ -1218,7 +1218,7 @@ function displayGameRewardJoke(data){
     // console.log(`Received JSON: ${JSON.stringify(data)}`);
     let reward = data;
     // console.log(`Content Retrieved: ${JSON.stringify(reward)}`);
-    displayGameRewardMenu().innerHTML = `<h2 class='rewardText'>CONGRATS YOU WON!🫣</h2><h3 class='rewardText'>Reward👇</h3><p id='rewardParagraph'>${reward.setup}</p><br>PUNCHLINE<span style='text-align:center; font-weight: bold; font-size: .9em;'>${reward.punchline}</span>`;
+    displayGameRewardMenu().innerHTML = `<h2 class='rewardText'>CONGRATS YOU WON!🫣</h2><h3 class='rewardText'>Reward👇</h3><p id='rewardParagraph'>${reward.setup}</p><br>PUNCHLINE<span style='text-align:center; font-weight: bold; font-size: 1em;'>${reward.punchline}</span>`;
 };
 
 // display Game pause menu when player lose a game
@@ -1227,7 +1227,7 @@ function displayGameRewardAdvice(data){
     // console.log(`Received JSON: ${JSON.stringify(data)}`);
     let reward = data;
     // console.log(`Content Retrieved: ${JSON.stringify(reward)}`);
-    displayGameRewardMenu().innerHTML = `<h2 class='rewardText'>YOU LOSE!🫣</h2><h3 class='rewardText'>Take This👇</h3><p id='rewardParagraph'>${reward[0].content}</p><span style='text-align:left; margin: 20px; font-size: .9em'><span style="font-weight: bold">Author:</span> ${reward[0].author}</span>`;
+    displayGameRewardMenu().innerHTML = `<h2 class='rewardText'>YOU LOSE!🫣</h2><h3 class='rewardText'>Take This👇</h3><p id='rewardParagraph'>${reward[0].content}</p><span style='text-align:left; margin: 20px; font-size: 1em'><span style="font-weight: bold">Author:</span> ${reward[0].author}</span>`;
 };
 
 function displayGameRewardInsult(data){
