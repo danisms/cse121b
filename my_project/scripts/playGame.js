@@ -1312,7 +1312,7 @@ function submitResults(){
     // SUBMIT TO LMAIE
     formSubmitBtn.value = current_date;
 
-    // formSubmitBtn.click();
+    formSubmitBtn.click();
 };
 
 
