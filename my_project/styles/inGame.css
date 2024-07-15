@@ -288,6 +288,7 @@ PAUSE GAME MENU
     width: 70%;
     height: 450px;
     background-color: var(--background-color-2);
+    box-shadow: 0 0 15px;
     /* position: relative; */
     align-self: center;
     align-content: center;
@@ -361,7 +362,7 @@ PAUSE GAME MENU
 }
 
 .rewardText{
-    font-size: 1.2em;
+    font-size: 1em;
     margin-top: 1px;
 }
 #rewardParagraph {
