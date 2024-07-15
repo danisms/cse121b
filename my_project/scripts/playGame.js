@@ -5,7 +5,7 @@ function selectDifficulty(value){
     difficult = value;
     document.querySelector('#selectDifficultyMenu').style.display = 'none';
     document.querySelector('#playGameMenu').style.display = 'block';
-    console.log(`Game Difficulty: ${difficult}`)
+    // console.log(`Game Difficulty: ${difficult}`)  // for testing purpose
 };
 
 
@@ -14,11 +14,11 @@ let playerName = ''
  
 function getPlayerName() {
     let getName = document.getElementById('name');
-    console.log(getName)
+    // console.log(getName)  // for testing purpose
     playerName = getName.value;
     getName.value = '';
     // validate input
-    console.log(`Name: ${playerName}`);  // for testing purpose
+    // console.log(`Name: ${playerName}`);  // for testing purpose
     if (playerName.trim() == '') {
         alert('Player Name Should not be empty');
     }else if (playerName.trim().length < 3){
@@ -59,7 +59,7 @@ function backTo(url) {
 function displayPlayerName() {
     let nameHolder = document.querySelector('#playerNameHolder');
     nameHolder.innerHTML = playerName.toUpperCase();
-    console.log(`Player Name: ${playerName}`);
+    // console.log(`Player Name: ${playerName}`);  // for testing purpose
 };
 
 let currentButtonId = '';  // store current button clicked id
@@ -104,9 +104,9 @@ function getButton(value) {
 // main function for playing the game
 function playGame() {
     // Function that holds the game functionality need to play the game
-    console.log(`Current Button Key: ${currentButtonKey}`)  // for testing purpose
-    console.log(`Current Button ID: ${currentButtonId}`)  // for testing purpose
-    console.log('PlayGame was activated')  // for testing purpose
+    // console.log(`Current Button Key: ${currentButtonKey}`)  // for testing purpose
+    // console.log(`Current Button ID: ${currentButtonId}`)  // for testing purpose
+    // console.log('PlayGame was activated')  // for testing purpose
     assignAndDisplayValue(currentButtonId);
     gameProgress(gameObject);  // assign values to gameObject
     availableKeys = Object.keys(gameObject);  // updates available key Array
@@ -130,7 +130,7 @@ function playGame() {
             calculateResult();
         }, 500);
     }else{
-        console.log('FOUND WINNER IS FALSE')
+        // console.log('FOUND WINNER IS FALSE');  // for testing purpose
         evaluateAndPlay(gameObject, foundWinner);
     }
 };
@@ -174,7 +174,7 @@ function assignAndDisplayValue(buttonId) {
         }else{
             currentPlayer = 'p'
         }
-        console.log(`CurrentPlayer: ${currentPlayer}`)
+        // console.log(`CurrentPlayer: ${currentPlayer}`)
         // Assign Button Value
         buttonVal.value = currentValue
         buttonVal.innerHTML = currentValue.toUpperCase();
@@ -187,7 +187,7 @@ function assignAndDisplayValue(buttonId) {
 function gameProgress(object) {
     // store the button and value as an object literal
     object[currentButtonKey] = currentValue;
-    console.log(object);  // for testing purpose
+    // console.log(object);  // for testing purpose
 };
 
 // remove value from global list variable. Btn clicked value list and all buttons value;
@@ -196,25 +196,25 @@ function removeListValue(incompleteList, completedList) {
     incompleteList.forEach((key) => {
         // console.log(`Return Key Search: ${completedList.indexOf(key)}`) // for debugging
         if (completedList.indexOf(key) != -1) {
-            let getIndex = completedList.indexOf(key)
+            let getIndex = completedList.indexOf(key);
             // console.log(getIndex)
-            completedList.splice(getIndex, 1)
+            completedList.splice(getIndex, 1);
         }else {
             // console.log(`key: ${key} not found in completedList`);  // for debugging
         }
 
     });
-    console.log(`Remainder Values = ${completedList}`)
+    // console.log(`Remainder Values = ${completedList}`);  // for testing purpose
 };
 
 // computer check for when to play
 function evaluateAndPlay(object, checkWin) {
-    console.log(`Found Winner: ${checkWin}`);  // for testing purpose;
+    // console.log(`Found Winner: ${checkWin}`);  // for testing purpose;
     if (checkWin == false && currentPlayer === 'c'){
         // Computer play game
         // check if all in box button is full before computer can play
         let objectKeyCount = Object.keys(object).length;
-        console.log(`Object Keys: ${objectKeyCount}`);
+        // console.log(`Object Keys: ${objectKeyCount}`);
         if (objectKeyCount >= 9) {
             setTimeout(() => {
                 computerPlay(object);
@@ -232,14 +232,14 @@ function evaluateAndPlay(object, checkWin) {
 // computer make choices on what to play
 function computerPlay(object) {
     // Computer choice
-    console.log('COMPUTER: I will make a choice!');
+    // console.log('COMPUTER: I will make a choice!');  // for testing purpose
 
     let playAttack = attack();
-    console.log(`Attack Return = ${playAttack}`);
+    // console.log(`Attack Return = ${playAttack}`);  // for testing purpose
     let playDefense = ''
     if (playAttack != true){
         playDefense = defend();
-        console.log(`Defense Return = ${playDefense}`);
+        // console.log(`Defense Return = ${playDefense}`);  // for testing purpose
     }else {
         // do nothing
     };
@@ -250,7 +250,7 @@ function computerPlay(object) {
     function pickRandom(){
         // get random numbers
         let randomNum = getRandomNum(9);
-        console.log('Select Num: ' + randomNum);
+        // console.log('Select Num: ' + randomNum);  // for testing purpose
 
         if (randomNum === 1) {
             return 'a';
@@ -274,9 +274,9 @@ function computerPlay(object) {
     };
 
     function pickRandomValue(arrayList) {
-        let randomIndexNum = getRandomNum(arrayList.length - 1);
+        let randomIndexNum = getRandomNum(arrayList.length);
         let selectedValue = arrayList[randomIndexNum];
-        console.log(`Selected Random Value = ${selectedValue}`)
+        // console.log(`Selected Random Value = ${selectedValue}`);  // for testing purpose
         return selectedValue;
     };
 
@@ -405,7 +405,7 @@ function computerPlay(object) {
     };
 
     function attack(){
-        console.log(`I'm in attack: firstPlayer = ${firstPlayer}`)
+        // console.log(`I'm in attack: firstPlayer = ${firstPlayer}`);  // for testing purpose
         
         if (firstPlayer === 'c' && currentPlayer === 'c') { // NOTE: ComputerValue = X;
            return checkDefenseOrAttack('x');
@@ -418,7 +418,7 @@ function computerPlay(object) {
     };
 
     function defend(){
-        console.log(`I'm in defense: firstPlayer = ${firstPlayer}`)
+        // console.log(`I'm in defense: firstPlayer = ${firstPlayer}`);  // for testing purpose
         
         if (firstPlayer === 'c' && currentPlayer === 'c') { // NOTE: ComputerValue = X;
            return checkDefenseOrAttack('o');
@@ -431,7 +431,7 @@ function computerPlay(object) {
     };
 
     function strategicMove(){
-        console.log(`I'm in StrategicMove: firstPlayer = ${firstPlayer}`)
+        // console.log(`I'm in StrategicMove: firstPlayer = ${firstPlayer}`);  // for testing purpose
         let options = []  // temporal computer strategic move options;
         let selectedChoice = ''  // temporal choice made by computer;
         
@@ -475,31 +475,31 @@ function computerPlay(object) {
                     // console.log('AvailableKeys Length is = 1');  // for debugging purpose
                     // First Player Game at corner (top, or bottom i.e a, c, g or i);
                     if (object.a === playerValue) {
-                        options = ['i', 'e'];
+                        options = ['e', 'i'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`);
+                        // console.log(`SelectedChoice = ${selectedChoice}`);
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.c === playerValue){
-                        options = ['g', 'e'];
+                        options = ['e', 'g'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.g === playerValue){
-                        options = ['c', 'e'];
+                        options = ['e', 'c'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.i === playerValue){
-                        options = ['a', 'e'];
+                        options = ['e', 'a'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }
@@ -508,29 +508,29 @@ function computerPlay(object) {
                     else if (object.b === playerValue) {
                         options = ['h', 'e'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.d === playerValue){
                         options = ['f', 'e'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.f === playerValue){
                         options = ['d', 'e'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.h === playerValue){
                         options = ['b', 'e'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }
@@ -559,8 +559,8 @@ function computerPlay(object) {
                             options = ['e'];
                         };
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.c === playerValue && object.d == playerValue) {
@@ -570,8 +570,8 @@ function computerPlay(object) {
                             options = ['e'];
                         };
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.g === playerValue && object.f == playerValue) {
@@ -581,8 +581,8 @@ function computerPlay(object) {
                             options = ['e'];
                         };
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.i === playerValue && object.d == playerValue) {
@@ -592,8 +592,8 @@ function computerPlay(object) {
                             options = ['e'];
                         };
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }
@@ -603,60 +603,82 @@ function computerPlay(object) {
                     else if (object.a === computerValue && object.e === playerValue && object.i === playerValue) {
                         options = ['c', 'g'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.b === computerValue && object.e === playerValue && object.h === playerValue) {
                         options = ['a', 'c', 'h', 'i'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.c === computerValue && object.e === playerValue && object.g === playerValue) {
                         options = ['a', 'i'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.d === computerValue && object.e === playerValue && object.f === playerValue) {
                         options = ['a', 'c', 'g', 'i'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.f === computerValue && object.e === playerValue && object.d === playerValue) {
                         options = ['a', 'c', 'g', 'i'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.g === computerValue && object.e === playerValue && object.c === playerValue) {
                         options = ['a', 'i'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.h === computerValue && object.e === playerValue && object.b === playerValue) {
                         options = ['a', 'c', 'g', 'i'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.i === computerValue && object.e === playerValue && object.a === playerValue) {
                         options = ['c', 'g'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }
+
+                    // avoiding two ways when player plays in farther corners and computer plays in e - middle
+                    // i.e
+                    // a and i, c and g;
+                    // play only at the corner middles
+                    else if (object.a == playerValue && object.i == playerValue && object.e == computerValue) {
+                        options = ['b', 'd', 'f', 'h'];
+                        selectedChoice = pickRandomValue(options);
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
+                        getButton(selectedChoice);  // make choice from options available
+                        return true;
+                    }
+                    else if (object.c == playerValue && object.g == playerValue && object.e == computerValue) {
+                        options = ['b', 'd', 'f', 'h'];
+                        selectedChoice = pickRandomValue(options);
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
+                        getButton(selectedChoice);  // make choice from options available
+                        return true;
+                    }
+
                     // if all conditions fail, make random choice
                     else{
                         // Make random choice
@@ -682,31 +704,35 @@ function computerPlay(object) {
                 else if (availableKeys.length == 1 && currentPlayer === 'c'){
                     // First Player Game at corner (top, or bottom i.e a, c, g or i);
                     if (object.a === playerValue) {
-                        options = ['i', 'e'];
+                        // options = ['i', 'e'];
+                        options = ['e'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.c === playerValue){
-                        options = ['g', 'e'];
+                        // options = ['g', 'e'];
+                        options = ['e'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.g === playerValue){
-                        options = ['c', 'e'];
+                        // options = ['c', 'e'];
+                        options = ['e'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.i === playerValue){
-                        options = ['a', 'e'];
+                        // options = ['a', 'e'];
+                        options = ['e'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }
@@ -715,29 +741,29 @@ function computerPlay(object) {
                     else if (object.b === playerValue) {
                         options = ['h', 'e'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.d === playerValue){
                         options = ['f', 'e'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.f === playerValue){
                         options = ['d', 'e'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.h === playerValue){
                         options = ['b', 'e'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }
@@ -746,8 +772,8 @@ function computerPlay(object) {
                     else if (object.e === playerValue) {
                         options = ['a', 'c', 'g', 'i'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }
@@ -774,8 +800,8 @@ function computerPlay(object) {
                             options = ['e'];
                         };
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.c === playerValue && object.d == playerValue) {
@@ -785,8 +811,8 @@ function computerPlay(object) {
                             options = ['e'];
                         };
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.g === playerValue && object.f == playerValue) {
@@ -796,8 +822,8 @@ function computerPlay(object) {
                             options = ['e'];
                         };
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }else if (object.i === playerValue && object.d == playerValue) {
@@ -807,8 +833,8 @@ function computerPlay(object) {
                             options = ['e'];
                         };
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }
@@ -819,32 +845,32 @@ function computerPlay(object) {
                     else if (object.a === computerValue && object.e === playerValue && object.i === playerValue) {
                         options = ['c', 'g'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     } // no b because in hard, when player first move is at the middle, computer does not play at the middle corners but at the hedge. 
                     else if (object.c === computerValue && object.e === playerValue && object.g === playerValue) {
                         options = ['a', 'i'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     } // no d and f because in hard, when player first move is at the middle, computer does not play at the middle corners but at the hedge.
                     else if (object.g === computerValue && object.e === playerValue && object.c === playerValue) {
                         options = ['a', 'i'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     } // no h because in hard, when player first move is at the middle, computer does not play at the middle corners but at the hedge.
                     else if (object.i === computerValue && object.e === playerValue && object.a === playerValue) {
                         options = ['c', 'g'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }
@@ -858,35 +884,57 @@ function computerPlay(object) {
                     else if ((object.b === playerValue && object.g === playerValue) || (object.b === playerValue && object.i === playerValue)) {
                         options = ['a', 'c'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }
                     else if ((object.d === playerValue && object.c === playerValue) || (object.d === playerValue && object.i === playerValue)) {
                         options = ['a', 'g'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }
                     else if ((object.f === playerValue && object.a === playerValue) || (object.f === playerValue && object.g === playerValue)) {
                         options = ['c', 'i'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }
                     else if ((object.h === playerValue && object.a === playerValue) || (object.h === playerValue && object.c === playerValue)) {
                         options = ['g', 'i'];
                         selectedChoice = pickRandomValue(options);
-                        console.log(`Available Options = ${options}`)
-                        console.log(`SelectedChoice = ${selectedChoice}`)
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
                         getButton(selectedChoice);  // make choice from options available
                         return true;
                     }
+
+                    // avoiding two ways when player plays in farther corners and computer plays in e - middle
+                    // i.e
+                    // a and i, c and g;
+                    // play only at the corner middles
+                    else if (object.a == playerValue && object.i == playerValue && object.e == computerValue) {
+                        options = ['b', 'd', 'f', 'h'];
+                        selectedChoice = pickRandomValue(options);
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
+                        getButton(selectedChoice);  // make choice from options available
+                        return true;
+                    }
+                    else if (object.c == playerValue && object.g == playerValue && object.e == computerValue) {
+                        options = ['b', 'd', 'f', 'h'];
+                        selectedChoice = pickRandomValue(options);
+                        // console.log(`Available Options = ${options}`)
+                        // console.log(`SelectedChoice = ${selectedChoice}`)
+                        getButton(selectedChoice);  // make choice from options available
+                        return true;
+                    }
+
                     // if no of the conditions above is true, make random choice
                     else{
                         // Make random choice
@@ -917,54 +965,54 @@ function checkForWin(object) {
         if (object.a === value && object.b === value && object.c === value){
             winner = value;
             winningButtons = ['a', 'b', 'c'];
-            console.log(`Winner: ${winner}`);
-            console.log(`WinningButtons = ${winningButtons}`);
+            // console.log(`Winner: ${winner}`);
+            // console.log(`WinningButtons = ${winningButtons}`);
             return true;
         }else if (object.a === value && object.d === value && object.g === value){
             winner = value;
             winningButtons = ['a', 'd', 'g'];
-            console.log(`Winner: ${winner}`);
-            console.log(`WinningButtons = ${winningButtons}`);
+            // console.log(`Winner: ${winner}`);
+            // console.log(`WinningButtons = ${winningButtons}`);
             return true;
         }else if (object.a === value && object.e === value && object.i === value){
             winner = value;
             winningButtons = ['a', 'e', 'i'];
-            console.log(`Winner: ${winner}`);
-            console.log(`WinningButtons = ${winningButtons}`);
+            // console.log(`Winner: ${winner}`);
+            // console.log(`WinningButtons = ${winningButtons}`);
             return true;
         } // b check
         else if (object.b === value && object.e === value && object.h === value){
             winner = value;
             winningButtons = ['b', 'e', 'h'];
-            console.log(`Winner: ${winner}`);
-            console.log(`WinningButtons = ${winningButtons}`);
+            // console.log(`Winner: ${winner}`);
+            // console.log(`WinningButtons = ${winningButtons}`);
             return true;
         } // c check
         else if (object.c === value && object.f === value && object.i === value){
             winner = value;
             winningButtons = ['c', 'f', 'i'];
-            console.log(`Winner: ${winner}`);
-            console.log(`WinningButtons = ${winningButtons}`);
+            // console.log(`Winner: ${winner}`);
+            // console.log(`WinningButtons = ${winningButtons}`);
             return true;
         }else if (object.c === value && object.e === value && object.g === value){
             winner = value;
             winningButtons = ['c', 'e', 'g'];
-            console.log(`Winner: ${winner}`);
-            console.log(`WinningButtons = ${winningButtons}`);
+            // console.log(`Winner: ${winner}`);
+            // console.log(`WinningButtons = ${winningButtons}`);
             return true;
         }// d check
         else if (object.d === value && object.e === value && object.f === value){
             winner = value;
             winningButtons = ['d', 'e', 'f'];
-            console.log(`Winner: ${winner}`);
-            console.log(`WinningButtons = ${winningButtons}`);
+            // console.log(`Winner: ${winner}`);
+            // console.log(`WinningButtons = ${winningButtons}`);
             return true;
         }// check bottom row
         else if (object.g === value && object.h === value && object.i === value){
             winner = value;
             winningButtons = ['g', 'h', 'i'];
-            console.log(`Winner: ${winner}`);
-            console.log(`WinningButtons = ${winningButtons}`);
+            // console.log(`Winner: ${winner}`);
+            // console.log(`WinningButtons = ${winningButtons}`);
             return true;
         }
         else{
@@ -985,15 +1033,15 @@ function checkForWin(object) {
         };
     };
 
-    console.log(`CHECK X = ${checkX}`);  // for debugging;
-    console.log(`CHECK O = ${checkO}`);  // for debugging;
+    // console.log(`CHECK X = ${checkX}`);  // for debugging;
+    // console.log(`CHECK O = ${checkO}`);  // for debugging;
 
     if (checkX === false && checkO === false){
         // check if all in box button is full and reset
         let objectKeyCount = Object.keys(object).length;
-        console.log(`Object Keys: ${objectKeyCount}`);
+        // console.log(`Object Keys: ${objectKeyCount}`);
         if (objectKeyCount >= 9 && object.a != '' && object.b != '' && object.c != '' && object.d != '' && object.e != '' && object.f != '' && object.g != '' && object.h != '' && object.i != '') {
-            console.log('NO WIN')
+            // console.log('NO WIN')
             displayWinningButtons(initAllKeys);  // if no win, all buttons becomes winning button
 
             disableButtons(initAllKeys);
@@ -1121,8 +1169,8 @@ function resetAll() {
         currentPlayer = 'p';
     }
     firstPlayer = currentPlayer;
-    console.log(`CurrentFistPlayer: ${currentPlayer}`)
-    console.log(`First Player: ${firstPlayer}`);
+    // console.log(`CurrentFistPlayer: ${currentPlayer}`)
+    // console.log(`First Player: ${firstPlayer}`);
 };
 
 // display pause menu when pause button is clicked
@@ -1160,33 +1208,33 @@ function displayGameRewardMenu(){
     document.querySelector('#continueBtn').style.display = 'none';
     const screen = document.querySelector('#screen');
     screen.style.display = 'grid';
-    console.log(`Screen Display ID: ${screen}`);
+    // console.log(`Screen Display ID: ${screen}`);
     return screen;
 };
 
 // display Game Pause menu when player wins a game
 function displayGameRewardJoke(data){
     // Get Reward with an api
-    console.log(`Received JSON: ${JSON.stringify(data)}`);
+    // console.log(`Received JSON: ${JSON.stringify(data)}`);
     let reward = data;
-    console.log(`Content Retrieved: ${JSON.stringify(reward)}`);
-    displayGameRewardMenu().innerHTML = `<h2 class='rewardText'>CONGRATS YOU WON!🫣</h2><h3 class='rewardText'>Reward👇</h3><p id='rewardParagraph'>${reward.setup}</p><span style='text-align:center; margin: 20px; font-weight: lighter;: light;'>PUNCHLINE<br>${reward.punchline}</span>`;
+    // console.log(`Content Retrieved: ${JSON.stringify(reward)}`);
+    displayGameRewardMenu().innerHTML = `<h2 class='rewardText'>CONGRATS YOU WON!🫣</h2><h3 class='rewardText'>Reward👇</h3><p id='rewardParagraph'>${reward.setup}</p><br>PUNCHLINE<span style='text-align:center; font-weight: bold; font-size: .9em;'>${reward.punchline}</span>`;
 };
 
 // display Game pause menu when player lose a game
 function displayGameRewardAdvice(data){
     // Get Reward with an api
-    console.log(`Received JSON: ${JSON.stringify(data)}`);
+    // console.log(`Received JSON: ${JSON.stringify(data)}`);
     let reward = data;
-    console.log(`Content Retrieved: ${JSON.stringify(reward)}`);
-    displayGameRewardMenu().innerHTML = `<h2 class='rewardText'>YOU LOSE!🫣</h2><h3 class='rewardText'>Take This👇</h3><p id='rewardParagraph'>${reward[0].content}</p><span style='text-align:left; margin: 20px;'>Author: ${reward[0].author}</span>`;
+    // console.log(`Content Retrieved: ${JSON.stringify(reward)}`);
+    displayGameRewardMenu().innerHTML = `<h2 class='rewardText'>YOU LOSE!🫣</h2><h3 class='rewardText'>Take This👇</h3><p id='rewardParagraph'>${reward[0].content}</p><span style='text-align:left; margin: 20px; font-size: .9em'><span style="font-weight: bold">Author:</span> ${reward[0].author}</span>`;
 };
 
 function displayGameRewardInsult(data){
     // Get Reward with an api
-    console.log(`Received JSON: ${JSON.stringify(data)}`);
+    // console.log(`Received JSON: ${JSON.stringify(data)}`);
     let reward = data;
-    console.log(`Content Retrieved: ${JSON.stringify(reward)}`);
+    // console.log(`Content Retrieved: ${JSON.stringify(reward)}`);
     // displayGameRewardMenu().innerHTML = `<h2 class='rewardText'>YOU LOSE!🫣</h2><h3 class='rewardText'>Take This👇</h3><p id='rewardParagraph'>${reward[0].content}</p><span style='text-align:left; margin: 20px;'>Author: ${reward[0].author}</span>`;
 }
 
