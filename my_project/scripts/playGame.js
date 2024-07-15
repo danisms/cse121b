@@ -1271,9 +1271,48 @@ function submitResults(){
    totalGameRounds.value = totalRounds;
 
    let current_date = new Date();
-   formSubmitBtn.value = current_date;
 
-   formSubmitBtn.click();
+   // SUBMIT TO SCRIPT
+   // prepare data for upload
+   // for adding a player score
+   let dataObjects = [
+        {
+            'key':'add_score',
+            'value':'adding a new score'
+        },
+        {
+            'key':'player_name',
+            'value':playerName
+        },
+        {
+            'key':'difficulty',
+            'value':difficult
+        },
+        {
+            'key':'player_score',
+            'value':playerScore
+        },
+        {
+            'key':'computer_score',
+            'value':computerScore
+        },
+        {
+            'key':'total_round',
+            'value':totalRounds
+        },
+        {
+            'key':'timestamp',
+            'value':current_date
+        }
+    ]
+    
+    // submit data to script
+    // sendUploadDataRequest(dataObjects, processScoreData);
+
+    // SUBMIT TO LMAIE
+    formSubmitBtn.value = current_date;
+
+    // formSubmitBtn.click();
 };
 
 

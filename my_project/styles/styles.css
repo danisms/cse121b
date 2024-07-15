@@ -5,8 +5,8 @@
     --paragraph-font: Inter, Arial, Helvetica, sans-serif;
     --background-color: rgba(0, 0, 80, 0.8);
     --background-color-2: rgba(0, 0, 15, 0.9);
-    --background-color-3: rgba(102, 51, 153, 0.8);
-    --background-color-4: yellow;
+    --background-color-3: rgba(85, 48, 121, 0.8);
+    --background-color-4: rgb(126, 126, 43);
     --text-color: #fff;
     --btn-color: rgba(0, 0, 90, 0.5);
     --btn-color-2: rgba(0, 0, 0, 0.5);
@@ -61,10 +61,10 @@ input {
 
 body {
     /* background-color: #FFFFFF; */
-    /* background-color: var(--background-color); */
-    background: linear-gradient(90deg, var(--background-color-3), var(--background-color-4));
+    background-color: var(--background-color);
+    /* background: linear-gradient(90deg, var(--background-color-3), var(--background-color-4)); */
     animation-name: change-background;
-    animation-duration: 2s;
+    animation-duration: 10s;
     animation-iteration-count: infinite;
     /* animation-timing-function: linear; */
     transition: background 10s linear;

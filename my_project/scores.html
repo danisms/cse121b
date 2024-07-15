@@ -10,18 +10,18 @@
     <title>Scores</title>
 </head>
 <body>
-    <main>
+    <main id="main">
         <table>
             <!-- <caption>Top Players Scores</caption> -->
             <thead>
                 <tr>
-                    <th colspan="4" scope="colgroup">Top Players Scores</th>
+                    <th id="table-title" colspan="4" scope="colgroup">Top Players Scores</th>
                 </tr>
                 <tr>
-                    <th scope="col">SN</th>
-                    <th scope="col">NAME</th>
-                    <th scope="col">PS</th>
-                    <th scope="col">CS</th>
+                    <th scope="col">RANK</th>
+                    <th scope="col">PLAYER</th>
+                    <th scope="col">WIN</th>
+                    <th scope="col">FAIL</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,22 +35,73 @@
                     <th scope="row">2</th>
                     <td>Victor Opute</td>
                     <td>3</td>
-                    <td>1</td>
+                    <td>6</td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
                     <td>David Junior</td>
-                    <td>3</td>
                     <td>2</td>
+                    <td>1</td>
                 </tr>
                 <tr>
                     <th scope="row">4</th>
-                    <td>Samuel Emmavodua</td>
+                    <td>Samuel Jonah</td>
                     <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Jack Smith</td>
+                    <td>2</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>Jame Dawson</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>Amigo Santo</td>
+                    <td>1</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>Young duo</td>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <th scope="row">9</th>
+                    <td>Marco Micheal</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th scope="row">10</th>
+                    <td>Mary Vony</td>
+                    <td>0</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <th scope="row">11</th>
+                    <td>Joy Donna</td>
+                    <td>0</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <th scope="row">12</th>
+                    <td>Rachel Salve</td>
+                    <td>0</td>
                     <td>1</td>
                 </tr>
             </tbody>
         </table>
+        <button onclick="backTo('index.html')">X</button>
     </main>
 </body>
+<script src="scripts/process-data.js" defer></script>
+<script src="scripts/scores.js" defer></script>
 </html>

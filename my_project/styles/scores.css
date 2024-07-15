@@ -1,13 +1,36 @@
+:root {
+    --zebra: rgba(0, 0, 0, 0.2);
+}
+
+main {
+    display: grid;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+}
+
+/* TABLE */
 table {
+    height: fit-content;
     margin: 0 auto;
-    padding: 1rem;
+    /* padding: 1rem; */
+    width: 100%;
+    /* background-color: var(--background-color-2); */
+    border-collapse: collapse;
 }
 thead {
-    background-color: red;
     width: 100%;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-family: var(--heading-font);
-    height: 5rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+thead tr {
+    background-color: var(--background-color);
+}
+thead > tr:first-child {
+    /* background: none; */
+    font-size: 1.5em;
 }
 
 thead tr th{
@@ -15,4 +38,31 @@ thead tr th{
 }
 tbody {
     font-family: var(--paragraph-font);
+    background-color: var(--background-color);
+    text-align: center;
+    font-size: 1.2em;
+}
+tbody tr td{
+    padding: 1rem;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--zebra);
+}
+
+
+/* BUTTON */
+button {
+    width: fit-content;
+    height: fit-content;
+    padding: .5rem 1rem;
+    font-size: 2em;
+    background-color: var(--background-color);
+    color: white;
+    border-radius: 100%;
+    position: fixed;
+    /* justify-self: self-end; */
+    top: 5px;
+    right: 10px;
+    left: 10px;
 }
