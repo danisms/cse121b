@@ -101,7 +101,9 @@ let secsToNewYear = Math.floor((globalDistance % (minute)) / second);
                         videoElement.play();
                     }
                 });         
-            } else if (countDay == 0 && countHour == 0 && countMin == 0 && countSec > 1) {
+            }
+            
+            if (countDay == 0 && countHour == 0 && countMin == 0 && countSec > 1) {
                 if (!videoIsPlaying(videoElement)) {
                     videoElement.play();
                 }
@@ -109,11 +111,15 @@ let secsToNewYear = Math.floor((globalDistance % (minute)) / second);
 
             if (countDay == 0 && countHour == 0 && countMin == 0 && countSec <= 10) {
                 // yearBox.style.display = 'none';
-                timeBox.style.display = 'none';
+                if (videoIsPlaying(videoElement)) {
+                    timeBox.style.display = 'none';
+                }
             }
 
             if (countDay == 0 && countHour == 0 && countMin == 0 && countSec <= 0) {
-                yearBox.style.display = 'none';
+                if (videoIsPlaying(videoElement)) {
+                    yearBox.style.display = 'none';
+                }
                 // timeBox.style.display = 'none';
             }
             // play the happy new year song.
