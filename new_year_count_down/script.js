@@ -4,7 +4,7 @@ const newYearVideoPath = 'videos/happy-new-year.mp4';
 const videoElement = document.createElement('video');
 videoElement.src = newYearVideoPath;
 videoElement.load();
-videoElement.controls = true;
+videoElement.controls = false;
 videoElement.style.width = '100vw';
 videoElement.style.height = '100vh';
 
