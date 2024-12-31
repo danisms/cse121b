@@ -15,6 +15,7 @@ videoHolder.appendChild(videoElement);
 // get elements
 const audioElement = document.getElementById('audio');
 const yearBox = document.getElementById('box1');
+yearBox.style.display = 'none';
 const timeBox = document.getElementById('box2');
 
 // get current date and time when program starts
@@ -117,8 +118,8 @@ let secsToNewYear = Math.floor((globalDistance % (minute)) / second);
             }
 
             if (countDay == 0 && countHour == 0 && countMin == 0 && countSec <= 10) {
-                // yearBox.style.display = 'none';
                 if (videoIsPlaying(videoElement)) {
+                    yearBox.style.display = 'none';
                     timeBox.style.display = 'none';
                 }
             }
