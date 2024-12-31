@@ -4,45 +4,49 @@
         <title>New Year Count Down</title>
         <link rel="stylesheet" href="normalize.css" type="text/css">
         <link href="styles.css" type="text/css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="count-down, new-year, new year, happy new year, count down 202" />
     </head>
     <body>
         <main id="main">
             <audio id="audio" src="sound/Pentatonix-Christmas-Songs.mp3" controls load autoplay loop focus></audio>
-            <video src="videos/Happy-New-Year.mp4" id="video" name="video" width="100%" height="100%" poster autoplay preload="auto" muted>
-            </video>
-            <div id="count-down-holder">
-                <span id="header">
-                    <h1>NEW YEAR COUNT DOWN</h1>
-                </span>
-                <!--Time Boxes-->    
-                <div id="box1">
-                    <div id="TBox" class="inbox"><span id="dayNum" class="num">0</span></div>
-                    
-                    <div id="HBox" class="inbox"><span id="hourNum" class="num">0</span></div>
-                    
-                    <div id="TensBox" class="inbox"><span id="minNum" class="num">0</span></div>
-                    
-                    <div id="UBox" class="inbox"><span id="secNum" class="num">0</span></div>
-                </div>
-    
-                <div id="box2">
-                    <div id="dayBoxHolder" class="timeBoxHolder">
-                        <div id="dayBox" class="inbox2"><span id="dayNum2" class="num2">0</span></div>
-                        <span id="day" class="alphabet"><h2>DAY</h2></span>
+            <div class="content-holder">
+                <div id="video-holder"></div>
+                <div id="count-down-holder">
+                    <span id="header">
+                        <h1>WELCOME TO EKAE WARD</h1>
+                    </span>
+                    <!--Time Boxes-->    
+                    <div id="box1">
+                        <div id="TBox" class="inbox"><span id="dayNum" class="num">0</span></div>
+                        
+                        <div id="HBox" class="inbox"><span id="hourNum" class="num">0</span></div>
+                        
+                        <div id="TensBox" class="inbox"><span id="minNum" class="num">0</span></div>
+                        
+                        <div id="UBox" class="inbox"><span id="secNum" class="num">0</span></div>
                     </div>
-                    <div id="hourBoxHolder" class="timeBoxHolder">
-                        <div id="hourBox" class="inbox2"><span id="hourNum2" class="num2">0</span></div>
-                        <span id="hour" class="alphabet"><h2>HOUR</h2></span>
-                    </div>
-                    <div id="minBoxHolder" class="timeBoxHolder">
-                        <div id="minBox" class="inbox2"><span id="minNum2" class="num2">0</span></div>
-                        <span id="min" class="alphabet"><h2>MINS</h2></span>
-                    </div>
-                    <div id="secBoxHolder" class="timeBoxHolder">
-                        <div id="secBox" class="inbox2"><span id="secNum2" class="num2">0</span></div>
-                        <span id="sec" class="alphabet"><h2>SECS</h2></span>
+        
+                    <div id="box2">
+                        <div id="dayBoxHolder" class="timeBoxHolder">
+                            <div id="dayBox" class="inbox2"><span id="dayNum2" class="num2">0</span></div>
+                            <span id="day" class="alphabet"><h2>DAY</h2></span>
+                        </div>
+                        <div id="hourBoxHolder" class="timeBoxHolder">
+                            <div id="hourBox" class="inbox2"><span id="hourNum2" class="num2">0</span></div>
+                            <span id="hour" class="alphabet"><h2>HOUR</h2></span>
+                        </div>
+                        <div id="minBoxHolder" class="timeBoxHolder">
+                            <div id="minBox" class="inbox2"><span id="minNum2" class="num2">0</span></div>
+                            <span id="min" class="alphabet"><h2>MINS</h2></span>
+                        </div>
+                        <div id="secBoxHolder" class="timeBoxHolder">
+                            <div id="secBox" class="inbox2"><span id="secNum2" class="num2">0</span></div>
+                            <span id="sec" class="alphabet"><h2>SECS</h2></span>
+                        </div>
                     </div>
                 </div>
             </div>

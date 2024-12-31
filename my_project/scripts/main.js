@@ -12,7 +12,7 @@ playGameBtn.addEventListener('click', playGameMenu);
 scoresBtn.addEventListener('click', gameScores);
 aboutBtn.addEventListener('click', ()=> open('about.html', target='_self'))
 exitBtn.addEventListener('click', () => {
-    open('index.html', '_self');
+    open('index.html', target='_self');
     close();
 });
 

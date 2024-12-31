@@ -1,30 +1,23 @@
-/*
-const d = new Date();
-let time = 1000;
-function countDown(){
-//Year
-let year = d.getFullYear();
-document.getElementById("secNum").innerHTML = year;
-//Day
-let day = 31 - d.getDate();
-document.getElementById("dayNum2").innerHTML = day;
-//Hour
-let hour = 24 - d.getHours();
-document.getElementById("hourNum2").innerHTML = hour;
-//Mins
-let min = 60 - d.getMinutes();
-document.getElementById("minNum2").innerHTML = min;
-//Secs
-let sec = 60 - d.getSeconds();
-displaySec = document.getElementById("secNum2").innerHTML = sec;
-setTimeout("countDown()", time);
-}
-window.onload = countDown();
-*/
-
 // Global variable
-// get current date and time when program starts
+// load video
+const newYearVideoPath = 'videos/happy-new-year.mp4';
+const videoElement = document.createElement('video');
+videoElement.src = newYearVideoPath;
+videoElement.load();
+videoElement.controls = false;
+videoElement.style.width = '100vw';
+videoElement.style.height = '100vh';
 
+const videoHolder = document.getElementById('video-holder');
+videoHolder.style.display = 'none';
+videoHolder.appendChild(videoElement);
+
+// get elements
+const audioElement = document.getElementById('audio');
+const yearBox = document.getElementById('box1');
+const timeBox = document.getElementById('box2');
+
+// get current date and time when program starts
 const second = 1000,
     minute = second * 60,
     hour = minute * 60,
@@ -96,24 +89,49 @@ let secsToNewYear = Math.floor((globalDistance % (minute)) / second);
             document.getElementById("secNum").textContent = countYear.toString()[3];
 
             //play a one minute count down video and stop previous background song from playing
-            if (countDay == 0 && countHour == 0 && countMin === 1 && countSec == 1) {
-                document.getElementById('video').style.display = 'block';
+            if (countDay == 0 && countHour == 0 && countMin === 1 && countSec <= 1) {
+                audioElement.src = '';  // clear current song;
+                videoHolder.style.display = 'block';
                 // focus allows the video to play even if I am not at the browser.
-                document.getElementById('video').focus();
-                document.getElementById("video").load();
-                document.getElementById("video").muted = false;
-                document.getElementById("video").autoplay = true;
-                document.getElementById('audio').src ="";
-                
+                videoElement.focus();
+                videoElement.play();
+                // backup play incase video did not play
+                videoElement.addEventListener('focus', ()=> {
+                    if (!videoIsPlaying(videoElement)) {
+                        videoElement.play();
+                    }
+                });         
+            } else if (countDay == 0 && countHour == 0 && countMin == 0 && countSec > 1) {
+                if (!videoIsPlaying(videoElement)) {
+                    videoElement.play();
+                }
+            }
+
+            if (countDay == 0 && countHour == 0 && countMin == 0 && countSec <= 10) {
+                // yearBox.style.display = 'none';
+                timeBox.style.display = 'none';
+            }
+
+            if (countDay == 0 && countHour == 0 && countMin == 0 && countSec <= 0) {
+                yearBox.style.display = 'none';
+                // timeBox.style.display = 'none';
             }
             // play the happy new year song.
             if (countDay < 0 && countHour <= 23 && countMin <= 59 && countSec <= 59) {
-                document.getElementById("audio").src = "sound/Happy-New-Year-Songs.mp3";
-                document.getElementById('audio').focus();
-                document.getElementById("audio").load();
-                document.getElementById("audio").muted = false;
-                document.getElementById("audio").autoplay = true;
+                audioElement.src = "sound/Happy-New-Year-Songs.mp3";
+                audioElement.focus();
+                audioElement.load();
+                audioElement.muted = false;
+                audioElement.autoplay = true;
                 clearInterval(x);
+                countDay = 0;
+                countHour = 0;
+                countMin = 0;
+                countSec = 0;
+                document.getElementById("dayNum2").innerText = countDay,
+                document.getElementById("hourNum2").innerText = countHour,
+                document.getElementById("minNum2").innerText = countMin,
+                document.getElementById("secNum2").innerText = countSec;
             } 
             //seconds
         }, 0)
@@ -127,3 +145,8 @@ if (daysToNewYear >= 335 && hourToNewYear <= 23 && minsToNewYear <= 59 && secsTo
     document.getElementById("audio").muted = false;
     document.getElementById("audio").autoplay = true;
 };
+
+// IMPORTANT FUNCTION
+function videoIsPlaying(videoElement) {
+    return !videoElement.paused && !videoElement.ended && videoElement.readyState > 2;
+}
