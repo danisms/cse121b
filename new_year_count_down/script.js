@@ -95,6 +95,13 @@ let secsToNewYear = Math.floor((globalDistance % (minute)) / second);
                 // focus allows the video to play even if I am not at the browser.
                 videoElement.focus();
                 videoElement.play();
+                videoElement.addEventListener('ended', ()=> {
+                    videoElement.src = 'videos/happy-new-year-loop.mp4';
+                    videoElement.autoplay = true;
+                    videoElement.muted = true;
+                    videoElement.loop = true;
+                    videoElement.play();
+                });
                 // backup play incase video did not play
                 videoElement.addEventListener('focus', ()=> {
                     if (!videoIsPlaying(videoElement)) {
