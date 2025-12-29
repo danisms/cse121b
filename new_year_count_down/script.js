@@ -1,3 +1,8 @@
+import { StorageKeys, getLocalStorage, setLocalStorage } from "./utils.mjs";
+
+// instantiate clasess
+const storageKeys = new StorageKeys();
+
 // Global variable
 // load video
 const newYearVideoPath = 'videos/happy-new-year.mp4';
@@ -17,6 +22,38 @@ const audioElement = document.getElementById('audio');
 const yearBox = document.getElementById('box1');
 yearBox.style.display = 'none';
 const timeBox = document.getElementById('box2');
+
+// set title and subtitle
+const titleHolder = document.getElementById("title");
+const subtitleHolder = document.getElementById("subtitle");
+const subtitle = `Countdown to ${new Date().getFullYear() + 1}`;
+subtitleHolder.innerHTML = subtitle;
+
+const titleStorageKey = storageKeys.title;
+let title = getLocalStorage(titleStorageKey) || null;
+if (title) {
+    const confirmTitle = confirm(`Do you want to continue using this title "${title}"?`);
+    if (!confirmTitle) {
+        title = null;
+    }
+}
+
+while (!title) {
+    title = prompt("Enter your activity Title");
+    if (toString(title).trim() == "") {
+        title = null;
+        let useDefaultTitle = confirm("You didn't enter a title, do you want to continue with a default title?");
+        if (useDefaultTitle) {
+            break;
+        }
+    }
+}
+
+if (title) {
+    setLocalStorage(titleStorageKey, title);
+    titleHolder.innerHTML = title;
+}
+    
 
 // get current date and time when program starts
 const second = 1000,

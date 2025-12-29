@@ -21,11 +21,20 @@
 */
 
 // Import JSON FILE
-import values from "./marriage_jokes.json" assert {type: 'json'};
+// import values from "./marriage_jokes.json" assert {type: 'json'};
+
+fetch("./scripts/marriage_jokes.json")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);  // for testing purpose
+        mainBtn.addEventListener('click', () => {
+            main(data.jokes);
+        });
+    })
+    .catch(error => console.error("Error loading JSON: ", error));
 // console.log(values)
 
 // CREATE GLOBAL VARIABLES
-const jokes = values.jokes;  // stores an object list of all jokes
 let pickedRandom = [];  // Hold all selected random number to avoid duplicates.
 let discussion = 0;  // stores the current discussion
 let coupleName = prompt('Enter The Couple Name.');
@@ -69,8 +78,9 @@ const allElements = [image_1, image_2, image_3, image_4, chatBox_1, chatBox_2, c
 
 
 // FUNCTIONS
-function main() {
+function main(jokes) {
     /* main function to run the program */
+    console.log("Jokes", jokes);  // for testing purpose
 
     // disable button
     mainBtn.disabled = true;
@@ -230,8 +240,6 @@ function main() {
         checkDiscussion();
     }, 2000);
 }
-
-mainBtn.addEventListener('click', main);
 
 // function to get random number between the MaxNumber given as argument.
 function getRandomNum(MaxNum){
